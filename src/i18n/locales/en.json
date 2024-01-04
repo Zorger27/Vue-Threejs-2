@@ -1,0 +1,42 @@
+{
+  "locale": {
+    "en": "English",
+    "uk": "Ukrainian",
+    "es": "Spanish"
+  },
+  "header": {
+    "prg01": "Cube Newest",
+    "prg02": "Cube v.2.0",
+    "prg03": "Cube Old",
+    "about": "About"
+  },
+  "footer": {
+    "text1": "Designed By ",
+    "text2": "Zorger",
+    "text3": ".",
+    "text4": "All rights reserved"
+  },
+  "project1": {
+    "name": "Cube Newest",
+    "disc": "Description"
+  },
+  "project2": {
+    "name": "Cube v.2.0",
+    "disc": "Description"
+  },
+  "project3": {
+    "name": "Cube Old",
+    "disc": "Description"
+  },
+  "about": {
+    "title": "Rotating 3D cube №2",
+    "more01": "More information...",
+    "more02": "This project provides the user with the opportunity to interact interactively with a 3D model. In this case with a cube. The model can be zoomed in/out, stopped rotating, scrolled in your direction, etc.",
+    "more03": "All this became possible thanks to the use of Three.js technology and Three.js Orbit controls.",
+    "more04": "There are a LOT of interesting things here! \uD83D\uDE09\uD83E\uDD13",
+    "more05": "Welcome! \uD83E\uDD29\uD83D\uDE0E",
+    "technologies": "Technologies",
+    "name": "Name",
+    "version": "Version"
+  }
+}

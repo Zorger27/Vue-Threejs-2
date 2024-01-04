@@ -1,0 +1,42 @@
+{
+  "locale": {
+    "en": "Inglés",
+    "uk": "Ukraniano",
+    "es": "Español"
+  },
+  "header": {
+    "prg01": "Cubo más nuevo",
+    "prg02": "Cubo v.2.0",
+    "prg03": "Cubo viejo",
+    "about": "Sobre"
+  },
+  "footer": {
+    "text1": "Diseñado por ",
+    "text2": "Zorger",
+    "text3": ".",
+    "text4": "Todos los derechos reservados"
+  },
+  "project1": {
+    "name": "Cubo más nuevo",
+    "disc": "Descripción"
+  },
+  "project2": {
+    "name": "Cubo v.2.0",
+    "disc": "Descripción"
+  },
+  "project3": {
+    "name": "Cubo viejo",
+    "disc": "Descripción"
+  },
+  "about": {
+    "title": "Cubo 3D giratorio №2",
+    "more01": "Más información...",
+    "more02": "Este proyecto brinda al usuario la oportunidad de interactuar interactivamente con un modelo 3D. En este caso con un cubo. El modelo se puede acercar o alejar, dejar de girar, desplazar en su dirección, etc.",
+    "more03": "Todo esto fue posible gracias al uso de la tecnología Three.js y los controles Three.js Orbit.",
+    "more04": "¡Hay MUCHAS cosas interesantes aquí! \uD83D\uDE09\uD83E\uDD13",
+    "more05": "¡Bienvenido! \uD83E\uDD29\uD83D\uDE0E",
+    "technologies": "Tecnologías",
+    "name": "Nombre",
+    "version": "Versión"
+  }
+}
