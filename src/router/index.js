@@ -21,14 +21,14 @@ const routes = [
           property: 'og:description',
           content: '3D cube Newest'
         },
-        // {
-        //   property: 'og:image',
-        //   content: 'https://vue-threejs-template.vercel.app/assets/ogimage/image_all.jpg'
-        // },
-        // {
-        //   property: 'og:url',
-        //   content: 'https://vue-threejs-template.vercel.app'
-        // },
+        {
+          property: 'og:image',
+          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/image_all.jpg'
+        },
+        {
+          property: 'og:url',
+          content: 'https://vue-threejs-2.vercel.app'
+        },
         {
           property: 'og:type',
           content: 'website'
@@ -52,14 +52,14 @@ const routes = [
           property: 'og:description',
           content: '3D cube v.2.0'
         },
-        // {
-        //   property: 'og:image',
-        //   content: 'https://vue-threejs-template.vercel.app/assets/ogimage/image_all.jpg'
-        // },
-        // {
-        //   property: 'og:url',
-        //   content: 'https://vue-threejs-template.vercel.app'
-        // },
+        {
+          property: 'og:image',
+          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/image_all.jpg'
+        },
+        {
+          property: 'og:url',
+          content: 'https://vue-threejs-2.vercel.app'
+        },
         {
           property: 'og:type',
           content: 'website'
@@ -82,14 +82,14 @@ const routes = [
           property: 'og:description',
           content: '3D cube Old'
         },
-        // {
-        //   property: 'og:image',
-        //   content: 'https://vue-threejs-template.vercel.app/assets/ogimage/image_all.jpg'
-        // },
-        // {
-        //   property: 'og:url',
-        //   content: 'https://vue-threejs-template.vercel.app'
-        // },
+        {
+          property: 'og:image',
+          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/image_all.jpg'
+        },
+        {
+          property: 'og:url',
+          content: 'https://vue-threejs-2.vercel.app'
+        },
         {
           property: 'og:type',
           content: 'website'
@@ -112,14 +112,14 @@ const routes = [
           property: 'og:description',
           content: 'About this project'
         },
-        // {
-        //   property: 'og:image',
-        //   content: 'https://vue-threejs-template.vercel.app/assets/ogimage/image_all.jpg'
-        // },
-        // {
-        //   property: 'og:url',
-        //   content: 'https://vue-threejs-template.vercel.app'
-        // },
+        {
+          property: 'og:image',
+          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/image_all.jpg'
+        },
+        {
+          property: 'og:url',
+          content: 'https://vue-threejs-2.vercel.app'
+        },
         {
           property: 'og:type',
           content: 'website'
@@ -142,14 +142,14 @@ const routes = [
           property: 'og:description',
           content: 'Page NOT Found'
         },
-        // {
-        //   property: 'og:image',
-        //   content: 'https://vue-threejs-template.vercel.app/assets/ogimage/image_all.jpg'
-        // },
-        // {
-        //   property: 'og:url',
-        //   content: 'https://vue-threejs-template.vercel.app'
-        // },
+        {
+          property: 'og:image',
+          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/image_all.jpg'
+        },
+        {
+          property: 'og:url',
+          content: 'https://vue-threejs-2.vercel.app'
+        },
         {
           property: 'og:type',
           content: 'website'
