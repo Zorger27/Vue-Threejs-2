@@ -191,9 +191,9 @@ router.beforeEach((to, from, next) => {
 
   // Если маршрут с заголовком был найден, устанавливает заголовок документа (страницы) в это значение.
   if(nearestWithTitle) {
-    document.title = nearestWithTitle.meta.title;
+    document.title = nearestWithTitle.meta["title"];
   } else if(previousNearestWithMeta) {
-    document.title = previousNearestWithMeta.meta.title;
+    document.title = previousNearestWithMeta.meta["title"];
   }
 
   // Удаляем все элементы, которые были добавлены через Vue Router
@@ -204,7 +204,7 @@ router.beforeEach((to, from, next) => {
   if(!nearestWithMeta) return next();
 
   // Обрабатываем и добавляем метатеги в тег <head> документа на основе данных из массива metaTags.
-  nearestWithMeta.meta.metaTags.map(tagDef => {
+  nearestWithMeta.meta["metaTags"].map(tagDef => {
     const tag = document.createElement('meta');
 
     Object.keys(tagDef).forEach(key => {
