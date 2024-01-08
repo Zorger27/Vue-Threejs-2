@@ -1,18 +1,19 @@
 <script>
+import ToggleFullScreen from "@/components/util/ToggleFullScreen.vue";
 // import { ref, onMounted, onUnmounted } from 'vue';
 // import * as THREE from 'three';
 // import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 
 export default {
   name: 'Project1',
-  components: {},
+  components: {ToggleFullScreen},
   methods: {},
 }
 </script>
 
 <template>
   <div class="container">
-    <h1>{{ $t('project1.name') }} <i @click="fullScreenView"><span :class="['fa', 'fa-expand-arrows-alt']"></span></i></h1>
+    <h1>{{ $t('project1.name') }} <i @click="fullScreenView"><span :class="['fa', 'fa-expand']"></span></i> <toggle-full-screen></toggle-full-screen></h1>
     <line></line>
     <div class="scene-container" ref="canvasContainer"></div>
   </div>
@@ -42,6 +43,6 @@ export default {
 @media (max-width: 768px) {
   .container {
     h1 {font-size: 2rem;margin: 0.5rem auto;}
-    .fa.fa-expand-arrows-alt {display: none;}  }
+    .fa.fa-expand {display: none;}  }
 }
 </style>
