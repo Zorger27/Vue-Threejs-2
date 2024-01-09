@@ -6,7 +6,7 @@ import ToggleFullScreen from "@/components/util/ToggleFullScreen.vue";
 import CanvasFullScreen from "@/components/util/CanvasFullScreen.vue";
 
 export default {
-  name: 'ThreeScene01',
+  name: 'Project3',
   components: {CanvasFullScreen, ToggleFullScreen},
   setup() {
     const canvasContainer = ref(null);
@@ -75,34 +75,7 @@ export default {
       // renderer.render(scene, camera);
     };
 
-    // const fullScreenView = () => {
-    //   const canvasContainerElement = canvasContainer.value;
-    //
-    //   if (document.fullscreenElement) {
-    //     document.exitFullscreen();
-    //   } else {
-    //     if (canvasContainerElement.requestFullscreen) {
-    //       canvasContainerElement.requestFullscreen();
-    //     } else if (canvasContainerElement.mozRequestFullScreen) { // Firefox
-    //       canvasContainerElement.mozRequestFullScreen();
-    //     } else if (canvasContainerElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-    //       canvasContainerElement.webkitRequestFullscreen();
-    //     } else if (canvasContainerElement.msRequestFullscreen) { // IE/Edge
-    //       canvasContainerElement.msRequestFullscreen();
-    //     }
-    //   }
-    // };
-
     window.addEventListener('resize', onWindowResize);
-
-    // window.addEventListener('keydown', (event) => {
-    //   if ((event.key === 'Backspace' || event.key === ' ') && document.fullscreenElement) {
-    //     document.exitFullscreen().catch((error) => {
-    //       // Обработка ошибки, если произошла
-    //       console.error('Exit fullscreen error:', error.message);
-    //     });
-    //   }
-    // });
 
     onMounted(() => {
       init();
@@ -117,7 +90,6 @@ export default {
 
     return {
       canvasContainer
-      // fullScreenView,
     };
   },
 }

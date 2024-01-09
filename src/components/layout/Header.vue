@@ -48,8 +48,8 @@ export default {
     </div>
     <div class="menu" :class="{ 'is-active': showMenu }">
       <router-link to="/" @click="hideMenu">{{ $t('header.prg01') }}</router-link>
-      <router-link to="/project2" @click="hideMenu">{{ $t('header.prg02') }}</router-link>
-      <router-link to="/project3" @click="hideMenu">{{ $t('header.prg03') }}</router-link>
+      <router-link to="/cube2" @click="hideMenu">{{ $t('header.prg02') }}</router-link>
+      <router-link to="/cube-old" @click="hideMenu">{{ $t('header.prg03') }}</router-link>
       <router-link to="/about" @click="hideMenu">{{ $t('header.about') }}</router-link>
     </div>
   </header>

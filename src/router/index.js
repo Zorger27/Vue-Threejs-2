@@ -1,7 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import Project1 from "@/views/menu/Project1View.vue";
 import Project2 from "@/views/menu/Project2View.vue";
-import ThreeScene01 from "@/views/menu/Project3View.vue";
+import Project3 from "@/views/menu/Project3View.vue";
 import About from "@/views/menu/AboutView.vue";
 import PageNotFound from "@/views/service/PageNotFound.vue";
 
@@ -38,7 +38,7 @@ const routes = [
   },
 
   {
-    path: '/project2',
+    path: '/cube2',
     name: 'project2',
     component: Project2,
     meta: {
@@ -68,9 +68,9 @@ const routes = [
     }
   },
   {
-    path: '/project3',
+    path: '/cube-old',
     name: 'project3',
-    component: ThreeScene01,
+    component: Project3,
     meta: {
       title: '3D cube Old',
       metaTags: [
