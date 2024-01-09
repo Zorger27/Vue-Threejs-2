@@ -34,7 +34,7 @@ export default {
         new THREE.MeshBasicMaterial({ color: 0xff0000, transparent: true, opacity: 1 }),
         // new THREE.MeshBasicMaterial({ color: 0x00ff00, transparent: true, opacity: 1 }),
         new THREE.MeshBasicMaterial({ color: 0xff00ff, transparent: true, opacity: 1 }),
-        new THREE.MeshBasicMaterial({ map: textureLoader.load('/assets/img/header-logo.svg'), transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ map: textureLoader.load('/assets/favicon-dev/android-chrome-maskable-512x512.png'), transparent: true, opacity: 1 }),
         new THREE.MeshBasicMaterial({ map: textureLoader.load('/assets/background/background01.webp'), transparent: true, opacity: 1 }),
         // new THREE.MeshBasicMaterial({ color: 0x0000ff, transparent: true, opacity: 1 }),
         // new THREE.MeshBasicMaterial({ color: 0xffff00, transparent: true, opacity: 1 }),
