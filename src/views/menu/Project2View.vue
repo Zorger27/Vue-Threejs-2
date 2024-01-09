@@ -1,15 +1,88 @@
 <script>
+import { ref, onMounted, onUnmounted } from 'vue';
+import * as THREE from 'three';
+import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import ToggleFullScreen from "@/components/util/ToggleFullScreen.vue";
 import CanvasFullScreen from "@/components/util/CanvasFullScreen.vue";
 
-// import { ref, onMounted, onUnmounted } from 'vue';
-// import * as THREE from 'three';
-// import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 export default {
   name: 'Project2',
   components: {CanvasFullScreen, ToggleFullScreen},
-  methods: {},
-};
+  setup() {
+    const canvasContainer = ref(null);
+    let scene, camera, renderer, cube, controls;
+
+    const init = () => {
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 0, 3.5);
+
+      renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.enablePan = false;
+      controls.enableZoom = true;
+
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 5.0;
+
+      const textureLoader = new THREE.TextureLoader();
+      const geometry = new THREE.BoxGeometry(1, 1, 1);
+      const materials = [
+        new THREE.MeshBasicMaterial({ color: 0xff0000, transparent: true, opacity: 1 }),
+        // new THREE.MeshBasicMaterial({ color: 0x00ff00, transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ color: 0xff00ff, transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ map: textureLoader.load('/assets/img/header-logo.svg'), transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ map: textureLoader.load('/assets/background/background01.webp'), transparent: true, opacity: 1 }),
+        // new THREE.MeshBasicMaterial({ color: 0x0000ff, transparent: true, opacity: 1 }),
+        // new THREE.MeshBasicMaterial({ color: 0xffff00, transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ map: textureLoader.load('/assets/img/footer-logo.svg'), transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ color: 0x00ffff, transparent: true, opacity: 1 }),
+      ];
+      cube = new THREE.Mesh(geometry, materials);
+
+      // Устанавливаем углы Эйлера (в радианах) для наклона
+      const euler = new THREE.Euler(Math.PI / 2, 0.25, 0);
+      cube.setRotationFromEuler(euler);
+
+      scene.add(cube);
+
+      canvasContainer.value.appendChild(renderer.domElement);
+
+      const animate = () => {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      };
+
+      animate();
+    };
+
+    const onWindowResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    };
+
+    window.addEventListener('resize', onWindowResize);
+
+    onMounted(() => {
+      init();
+      onWindowResize();
+    });
+
+    onUnmounted(() => {
+      renderer.dispose();
+    });
+
+    return {
+      canvasContainer
+    };
+  },
+}
 </script>
 
 <template>
