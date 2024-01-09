@@ -2,6 +2,7 @@
 import {onUnmounted} from "vue";
 
 export default {
+  name: "ToggleFullScreen",
   data() {
     return {
       isFullScreen: false,
@@ -91,7 +92,7 @@ export default {
 </script>
 
 <template>
-    <i @click="toggleFullScreen">
+    <i @click="toggleFullScreen" title="Document Full Screen">
       <span :class="['fa', isFullScreen ? 'fa-compress-arrows-alt' : 'fa-expand-arrows-alt']"></span>
     </i>
 </template>
