@@ -15,7 +15,7 @@ export default {
     const init = () => {
       scene = new THREE.Scene();
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.set(0, 0, 3.5);
+      camera.position.set(0, 0, 3);
 
       renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -29,18 +29,43 @@ export default {
       controls.autoRotateSpeed = 5.0;
 
       const textureLoader = new THREE.TextureLoader();
+      // Загрузка текстур
+      const textureRight = textureLoader.load('/assets/img/cube2/right.webp');
+      const textureLeft = textureLoader.load('/assets/img/cube2/left.webp');
+      const textureFront = textureLoader.load('/assets/img/cube2/front.webp');
+      const textureBack = textureLoader.load('/assets/img/cube2/back.webp');
+      const textureBottom = textureLoader.load('/assets/img/cube2/bottom.webp');
+      const textureTop = textureLoader.load('/assets/img/cube2/top.webp');
+
+      // Поворот UV-координат для текстуры
+      textureBack.center = new THREE.Vector2(0.5, 0.5);
+      textureBack.rotation = Math.PI;
+      textureBack.needsUpdate = true;
+
+      textureLeft.center = new THREE.Vector2(0.5, 0.5);
+      textureLeft.rotation = Math.PI / 2; // Поворот на 90 градусов
+      textureLeft.needsUpdate = true;
+
+      textureRight.center = new THREE.Vector2(0.5, 0.5);
+      textureRight.rotation = -Math.PI / 2; // Поворот на -90 градусов
+      textureRight.needsUpdate = true;
+
       const geometry = new THREE.BoxGeometry(1, 1, 1);
       const materials = [
-        new THREE.MeshBasicMaterial({ color: 0xff0000, transparent: true, opacity: 1 }),
+        // new THREE.MeshBasicMaterial({ color: 0xff0000, transparent: true, opacity: 1 }), // right
         // new THREE.MeshBasicMaterial({ color: 0x00ff00, transparent: true, opacity: 1 }),
-        new THREE.MeshBasicMaterial({ color: 0xff00ff, transparent: true, opacity: 1 }),
-        new THREE.MeshBasicMaterial({ map: textureLoader.load('/assets/img/favbig.jpg'), transparent: true, opacity: 1 }),
-        new THREE.MeshBasicMaterial({ map: textureLoader.load('/assets/background/background01.webp'), transparent: true, opacity: 1 }),
+        // new THREE.MeshBasicMaterial({ color: 0xff00ff, transparent: true, opacity: 1 }), // left
         // new THREE.MeshBasicMaterial({ color: 0x0000ff, transparent: true, opacity: 1 }),
         // new THREE.MeshBasicMaterial({ color: 0xffff00, transparent: true, opacity: 1 }),
-        new THREE.MeshBasicMaterial({ map: textureLoader.load('/assets/img/footer-logo.svg'), transparent: true, opacity: 1 }),
-        new THREE.MeshBasicMaterial({ color: 0x00ffff, transparent: true, opacity: 1 }),
+        // new THREE.MeshBasicMaterial({ color: 0x00ffff, transparent: true, opacity: 1 }), // top
+        new THREE.MeshBasicMaterial({ map: textureRight }),
+        new THREE.MeshBasicMaterial({ map: textureLeft }),
+        new THREE.MeshBasicMaterial({ map: textureFront }),
+        new THREE.MeshBasicMaterial({ map: textureBack }),
+        new THREE.MeshBasicMaterial({ map: textureBottom }),
+        new THREE.MeshBasicMaterial({ map: textureTop }),
       ];
+
       cube = new THREE.Mesh(geometry, materials);
 
       // Устанавливаем углы Эйлера (в радианах) для наклона
