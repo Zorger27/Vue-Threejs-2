@@ -85,6 +85,42 @@ export default {
       animate();
     };
 
+    // const stopRotationAndEnlarge = (event) => {
+    //   // Остановить вращение
+    //   controls.autoRotate = false;
+      //
+      // // Получить позицию клика внутри холста
+      // const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      // const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+      //
+      // // Определить объект, на который кликнули
+      // const raycaster = new THREE.Raycaster();
+      // raycaster.setFromCamera({x: mouseX, y: mouseY}, camera);
+      // const intersects = raycaster.intersectObjects([cube]);
+
+      // Если есть пересечение с кубом, повернуть его и увеличить на 20%
+      // if (intersects.length > 0) {
+      //   const intersection = intersects[0];
+      //   const face = intersection.face;
+      //
+      //   // Вычислить нормаль касательной к поверхности куба
+      //   const normal = face.normal.clone().applyQuaternion(cube.quaternion);
+      //
+      //   // Вычислить угол поворота для выравнивания куба с плоскостью касательной
+      //   const angle = Math.atan2(normal.y, normal.x);
+
+        // Увеличить куб на 20%
+        // cube.scale.multiplyScalar(1.2);
+
+        // // Повернуть куб в вычисленный угол
+        // cube.rotation.z = angle;
+        // cube.rotation.y = Math.PI / 2 - angle;
+
+        // Удалить обработчик событий после первого клика
+        // canvasContainer.value.removeEventListener('dblclick', stopRotationAndEnlarge);
+      // }
+    // }
+
     const onWindowResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
@@ -97,6 +133,9 @@ export default {
     onMounted(() => {
       init();
       onWindowResize();
+
+      // Обработчик двойного клика при загрузке компонента
+      // canvasContainer.value.addEventListener('dblclick', stopRotationAndEnlarge);
     });
 
     onUnmounted(() => {
