@@ -7,8 +7,8 @@ export default {
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     },
     tweetOnExTwitter() {
-      // const text = encodeURIComponent('Check out this awesome page!😉👍');
-      const text = encodeURIComponent(this.$router["meta"].title);
+      const text = encodeURIComponent('Check out this awesome page!😉👍');
+      // const text = encodeURIComponent(this.$router["meta"].title);
       const url = encodeURIComponent(window.location.href);
       window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
     },
