@@ -1,8 +1,9 @@
 <script>
-// import Vue from "vue";
+import SocialSharing from "@/components/other/SocialSharing.vue";
 
 export default {
   name: 'Footer',
+  components: {SocialSharing},
   data() {
     return {
       currentYear: new Date().getFullYear(),
@@ -32,6 +33,7 @@ export default {
       </a></b>{{ $t('footer.text3') }}<br>
       <b>&copy; {{ currentYear }}</b> - {{ $t('footer.text4') }}
     </p>
+    <SocialSharing></SocialSharing>
   </footer>
 </template>
 
@@ -85,7 +87,7 @@ footer {
       display: block;
       padding: 0 1rem 0 0;
       margin: 0;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-style: italic;
       color: saddlebrown;
     }
