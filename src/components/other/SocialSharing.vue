@@ -7,7 +7,7 @@ export default {
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
     },
     tweetOnExTwitter() {
-      const text = encodeURIComponent('Check out this awesome page!');
+      const text = encodeURIComponent('Check out this awesome page!😉👍');
       const url = encodeURIComponent(window.location.href);
       window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
     },
@@ -21,8 +21,10 @@ export default {
       window.open(shareUrl, '_blank');
     },
     shareLink() {
-      const url = encodeURIComponent(window.location.href);
-      navigator.clipboard.writeText(url).then(() => {
+      const url = window.location.href;
+      const decodedUrl = decodeURIComponent(url);
+
+      navigator.clipboard.writeText(decodedUrl).then(() => {
         console.log('Link copied to clipboard');
       }).catch((error) => {
         console.error('Error copying link to clipboard:', error);
