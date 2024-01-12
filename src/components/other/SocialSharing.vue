@@ -13,10 +13,8 @@ export default {
     },
     shareOnLinkedIn() {
       const url = encodeURIComponent(window.location.href);
-
       // Создаем URL для использования LinkedIn Share API
       const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-
       // Открываем окно шаринга с использованием LinkedIn Share API
       window.open(shareUrl, '_blank', 'width=600,height=400,resizable=yes,scrollbars=yes,status=yes');
     },
