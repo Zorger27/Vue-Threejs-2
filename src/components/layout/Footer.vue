@@ -1,5 +1,5 @@
 <script>
-import SocialSharing from "@/components/other/SocialSharing.vue";
+import SocialSharing from "@/components/util/SocialSharing.vue";
 
 export default {
   name: 'Footer',
