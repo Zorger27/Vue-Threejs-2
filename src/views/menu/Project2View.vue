@@ -4,17 +4,21 @@ import * as THREE from 'three';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import ToggleFullScreen from "@/components/util/ToggleFullScreen.vue";
 import CanvasFullScreen from "@/components/util/CanvasFullScreen.vue";
-import OpenGraphMixin from "@/assets/ogimage/openGraphMixin";
+import {openGraphMixin} from "@/assets/ogimage/openGraphMixin";
 
 export default {
   name: 'Project2',
   components: {CanvasFullScreen, ToggleFullScreen},
-  mixins: [OpenGraphMixin],
+  mixins: [openGraphMixin],
   mounted() {
-    // Динамически устанавливаем og:image в соответствии с текущей картинкой
-    const currentImage = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project2.jpg';
-    this.setOpenGraphImage(currentImage);
-  },
+    const title = '3D cube v.2.0';
+    const description = 'Rotating 3D cube v.2.0';
+    const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project2.jpg';
+    const url = 'https://vue-threejs-2.vercel.app/cube2';
+
+    // Dynamically set open graph tags
+    this.setOpenGraphTags(description, title, imageUrl, url);
+    },
   methods: {},
   setup() {
     const canvasContainer = ref(null);

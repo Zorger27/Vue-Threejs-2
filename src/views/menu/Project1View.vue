@@ -1,7 +1,7 @@
 <script>
 import ToggleFullScreen from "@/components/util/ToggleFullScreen.vue";
 import CanvasFullScreen from "@/components/util/CanvasFullScreen.vue";
-import OpenGraphMixin from "@/assets/ogimage/openGraphMixin";
+import {openGraphMixin} from "@/assets/ogimage/openGraphMixin";
 
 // import { ref, onMounted, onUnmounted } from 'vue';
 // import * as THREE from 'three';
@@ -9,12 +9,16 @@ import OpenGraphMixin from "@/assets/ogimage/openGraphMixin";
 export default {
   name: 'Project1',
   components: {CanvasFullScreen, ToggleFullScreen},
-  mixins: [OpenGraphMixin],
+  mixins: [openGraphMixin],
   mounted() {
-    // Динамически устанавливаем og:image в соответствии с текущей картинкой
-    const currentImage = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project1.jpg';
-    this.setOpenGraphImage(currentImage);
-  },
+    const title = '3D cube Newest';
+    const description = 'Rotating 3D cube Newest';
+    const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project1.jpg';
+    const url = 'https://vue-threejs-2.vercel.app';
+
+    // Dynamically set open graph tags
+    this.setOpenGraphTags(description, title, imageUrl, url);
+    },
   methods: {},
 }
 </script>

@@ -1,16 +1,37 @@
-export default {
+export const openGraphMixin = {
   methods: {
-    setOpenGraphImage(imageUrl) {
-      const meta = document.createElement('meta');
-      meta.setAttribute('property', 'og:image');
-      meta.setAttribute('content', imageUrl);
+    setOpenGraphTags(description, title, imageUrl, url) {
+      const metaTags = [
+        { name: 'description', content: description },
+        { property: 'og:title', content: title },
+        { property: 'twitter:title', content: title },
+        { property: 'og:description', content: description },
+        { property: 'twitter:description', content: description },
+        { property: 'og:image', content: imageUrl },
+        { property: 'twitter:image', content: imageUrl },
+        { property: 'og:url', content: url },
+        { property: 'og:type', content: 'website' },
+        { property: 'twitter:card', content: 'summary_large_image' }
+      ];
 
-      // Удаляем старые метатеги og:image, если они есть
-      const existingMetaTags = document.querySelectorAll('meta[property="og:image"]');
-      existingMetaTags.forEach((tag) => tag.remove());
+      metaTags.forEach((metaTag) => {
+        const meta = document.createElement('meta');
+        if (metaTag.property) {
+          meta.setAttribute('property', metaTag.property);
+        } else if (metaTag.name) {
+          meta.setAttribute('name', metaTag.name);
+        }
+        meta.setAttribute('content', metaTag.content);
 
-      // Добавляем новый метатег og:image
-      document.head.appendChild(meta);
+        // Remove existing meta tags with the same property or name
+        const existingMetaTags = document.querySelectorAll(
+          `[property="${metaTag.property}"], [name="${metaTag.name}"]`
+        );
+        existingMetaTags.forEach((tag) => tag.remove());
+
+        // Add the new meta tag
+        document.head.appendChild(meta);
+      });
     },
   },
 };

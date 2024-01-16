@@ -58,7 +58,7 @@ const routes = [
         },
         {
           property: 'og:url',
-          content: 'https://vue-threejs-2.vercel.app'
+          content: 'https://vue-threejs-2.vercel.app/cube2'
         },
         {
           property: 'og:type',
@@ -88,7 +88,7 @@ const routes = [
         },
         {
           property: 'og:url',
-          content: 'https://vue-threejs-2.vercel.app'
+          content: 'https://vue-threejs-2.vercel.app/cube-old'
         },
         {
           property: 'og:type',
@@ -118,7 +118,7 @@ const routes = [
         },
         {
           property: 'og:url',
-          content: 'https://vue-threejs-2.vercel.app'
+          content: 'https://vue-threejs-2.vercel.app/about'
         },
         {
           property: 'og:type',

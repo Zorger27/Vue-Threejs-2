@@ -1,10 +1,10 @@
 <script>
 import infoStore from "@/store/modules/service/infoStore";
-import OpenGraphMixin from "@/assets/ogimage/openGraphMixin";
+import {openGraphMixin} from "@/assets/ogimage/openGraphMixin";
 
 export default {
   name: 'About',
-  mixins: [OpenGraphMixin],
+  mixins: [openGraphMixin],
   computed: {
     infoStore() {
       return infoStore;
@@ -17,10 +17,14 @@ export default {
     };
   },
   mounted() {
-    // Динамически устанавливаем og:image в соответствии с текущей картинкой
-    const currentImage = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/about.jpg';
-    this.setOpenGraphImage(currentImage);
-  },
+    const title = 'About this Project';
+    const description = 'About this Project (3D cubes)';
+    const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/about.jpg';
+    const url = 'https://vue-threejs-2.vercel.app/about';
+
+    // Dynamically set open graph tags
+    this.setOpenGraphTags(description, title, imageUrl, url);
+    },
   methods: {
     changeView() {
       this.tableView = !this.tableView;

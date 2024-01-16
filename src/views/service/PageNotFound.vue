@@ -1,7 +1,18 @@
 <script>
+import {openGraphMixin} from "@/assets/ogimage/openGraphMixin";
 
 export default {
   name: 'PageNotFound',
+  mixins: [openGraphMixin],
+  mounted() {
+    const title = 'Page NOT Found';
+    const description = 'Page NOT Found';
+    const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/image_404.jpg';
+    const url = 'https://vue-threejs-2.vercel.app';
+
+    // Dynamically set open graph tags
+    this.setOpenGraphTags(description, title, imageUrl, url);
+  },
   components: {},
   methods: {},
 }
