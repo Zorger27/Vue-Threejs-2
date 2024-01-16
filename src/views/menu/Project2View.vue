@@ -4,29 +4,18 @@ import * as THREE from 'three';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import ToggleFullScreen from "@/components/util/ToggleFullScreen.vue";
 import CanvasFullScreen from "@/components/util/CanvasFullScreen.vue";
+import OpenGraphMixin from "@/assets/ogimage/openGraphMixin";
 
 export default {
   name: 'Project2',
   components: {CanvasFullScreen, ToggleFullScreen},
+  mixins: [OpenGraphMixin],
   mounted() {
     // Динамически устанавливаем og:image в соответствии с текущей картинкой
-    const currentImage = 'https://vue-threejs-2.vercel.app/assets/ogimage/project2.jpg';
+    const currentImage = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project2.jpg';
     this.setOpenGraphImage(currentImage);
   },
-  methods: {
-    setOpenGraphImage(imageUrl) {
-      const meta = document.createElement('meta');
-      meta.setAttribute('property', 'og:image');
-      meta.setAttribute('content', imageUrl);
-
-      // Удаляем старые метатеги og:image, если они есть
-      const existingMetaTags = document.querySelectorAll('meta[property="og:image"]');
-      existingMetaTags.forEach((tag) => tag.remove());
-
-      // Добавляем новый метатег og:image
-      document.head.appendChild(meta);
-    },
-  },
+  methods: {},
   setup() {
     const canvasContainer = ref(null);
     let scene, camera, renderer, cube, controls;
