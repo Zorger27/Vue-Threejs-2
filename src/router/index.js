@@ -23,7 +23,7 @@ const routes = [
         },
         {
           property: 'og:image',
-          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/image_all.jpg'
+          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project1.jpg'
         },
         {
           property: 'og:url',
@@ -54,7 +54,7 @@ const routes = [
         },
         {
           property: 'og:image',
-          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/image_all.jpg'
+          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project2.jpg'
         },
         {
           property: 'og:url',
@@ -84,7 +84,7 @@ const routes = [
         },
         {
           property: 'og:image',
-          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/image_all.jpg'
+          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project3.jpg'
         },
         {
           property: 'og:url',
@@ -114,7 +114,7 @@ const routes = [
         },
         {
           property: 'og:image',
-          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/image_all.jpg'
+          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/about.jpg'
         },
         {
           property: 'og:url',
@@ -144,7 +144,7 @@ const routes = [
         },
         {
           property: 'og:image',
-          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/image_all.jpg'
+          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/image_404.jpg'
         },
         {
           property: 'og:url',
