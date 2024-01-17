@@ -4,22 +4,22 @@ import * as THREE from 'three';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import ToggleFullScreen from "@/components/util/ToggleFullScreen.vue";
 import CanvasFullScreen from "@/components/util/CanvasFullScreen.vue";
-import {openGraphMixin} from "@/assets/ogimage/openGraphMixin";
+// import {openGraphMixin} from "@/assets/ogimage/openGraphMixin";
 
 export default {
   name: 'Project2',
   components: {CanvasFullScreen, ToggleFullScreen},
-  mixins: [openGraphMixin],
-  mounted() {
-    const metaDescription = 'Rotating 3D Cube';
-    const title = '3D cube v.2.0';
-    const description = 'Rotating 3D cube v.2.0';
-    const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project2.jpg';
-    const url = 'https://vue-threejs-2.vercel.app/cube2';
-
-    // Dynamically set open graph tags
-    this.setOpenGraphTags(metaDescription, title, description, imageUrl, url);
-    },
+  // mixins: [openGraphMixin],
+  // mounted() {
+  //   const metaDescription = 'Rotating 3D Cube';
+  //   const title = '3D cube v.2.0';
+  //   const description = 'Rotating 3D cube v.2.0';
+  //   const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project2.jpg';
+  //   const url = 'https://vue-threejs-2.vercel.app/cube2';
+  //
+  //   // Dynamically set open graph tags
+  //   this.setOpenGraphTags(metaDescription, title, description, imageUrl, url);
+  //   },
   methods: {},
   setup() {
     const canvasContainer = ref(null);
