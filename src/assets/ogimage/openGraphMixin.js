@@ -1,8 +1,8 @@
 export const openGraphMixin = {
   methods: {
-    setOpenGraphTags(description, title, imageUrl, url) {
+    setOpenGraphTags(metaDescription, title, description, imageUrl, url) {
       const metaTags = [
-        { name: 'description', content: description },
+        { name: 'description', content: metaDescription },
         { property: 'og:title', content: title },
         { property: 'twitter:title', content: title },
         { property: 'og:description', content: description },

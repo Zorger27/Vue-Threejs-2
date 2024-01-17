@@ -17,13 +17,14 @@ export default {
     };
   },
   mounted() {
+    const metaDescription = 'Rotating 3D Cube';
     const title = 'About this Project';
     const description = 'About this Project (3D cubes)';
     const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/about.jpg';
     const url = 'https://vue-threejs-2.vercel.app/about';
 
     // Dynamically set open graph tags
-    this.setOpenGraphTags(description, title, imageUrl, url);
+    this.setOpenGraphTags(metaDescription, title, description, imageUrl, url);
     },
   methods: {
     changeView() {
