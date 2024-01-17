@@ -12,28 +12,28 @@ const routes = [
     component: Project1,
     meta: {
       title: '3D cube Newest',
-      metaTags: [
-        {
-          property: 'og:title',
-          content: '3D cube Newest'
-        },
-        {
-          property: 'og:description',
-          content: '3D cube Newest'
-        },
-        {
-          property: 'og:image',
-          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project1.jpg'
-        },
-        {
-          property: 'og:url',
-          content: 'https://vue-threejs-2.vercel.app'
-        },
-        {
-          property: 'og:type',
-          content: 'website'
-        },
-      ]
+      // metaTags: [
+      //   {
+      //     property: 'og:title',
+      //     content: '3D cube Newest'
+      //   },
+      //   {
+      //     property: 'og:description',
+      //     content: '3D cube Newest'
+      //   },
+      //   {
+      //     property: 'og:image',
+      //     content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project1.jpg'
+      //   },
+      //   {
+      //     property: 'og:url',
+      //     content: 'https://vue-threejs-2.vercel.app'
+      //   },
+      //   {
+      //     property: 'og:type',
+      //     content: 'website'
+      //   },
+      // ]
     }
   },
 
@@ -43,28 +43,28 @@ const routes = [
     component: Project2,
     meta: {
       title: '3D cube v.2.0',
-      metaTags: [
-        {
-          property: 'og:title',
-          content: '3D cube v.2.0'
-        },
-        {
-          property: 'og:description',
-          content: '3D cube v.2.0'
-        },
-        {
-          property: 'og:image',
-          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project2.jpg'
-        },
-        {
-          property: 'og:url',
-          content: 'https://vue-threejs-2.vercel.app/cube2'
-        },
-        {
-          property: 'og:type',
-          content: 'website'
-        },
-      ]
+      // metaTags: [
+      //   {
+      //     property: 'og:title',
+      //     content: '3D cube v.2.0'
+      //   },
+      //   {
+      //     property: 'og:description',
+      //     content: '3D cube v.2.0'
+      //   },
+      //   {
+      //     property: 'og:image',
+      //     content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project2.jpg'
+      //   },
+      //   {
+      //     property: 'og:url',
+      //     content: 'https://vue-threejs-2.vercel.app/cube2'
+      //   },
+      //   {
+      //     property: 'og:type',
+      //     content: 'website'
+      //   },
+      // ]
     }
   },
   {
@@ -73,28 +73,28 @@ const routes = [
     component: Project3,
     meta: {
       title: '3D cube Old',
-      metaTags: [
-        {
-          property: 'og:title',
-          content: '3D cube Old'
-        },
-        {
-          property: 'og:description',
-          content: '3D cube Old'
-        },
-        {
-          property: 'og:image',
-          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project3.jpg'
-        },
-        {
-          property: 'og:url',
-          content: 'https://vue-threejs-2.vercel.app/cube-old'
-        },
-        {
-          property: 'og:type',
-          content: 'website'
-        },
-      ]
+      // metaTags: [
+      //   {
+      //     property: 'og:title',
+      //     content: '3D cube Old'
+      //   },
+      //   {
+      //     property: 'og:description',
+      //     content: '3D cube Old'
+      //   },
+      //   {
+      //     property: 'og:image',
+      //     content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project3.jpg'
+      //   },
+      //   {
+      //     property: 'og:url',
+      //     content: 'https://vue-threejs-2.vercel.app/cube-old'
+      //   },
+      //   {
+      //     property: 'og:type',
+      //     content: 'website'
+      //   },
+      // ]
     }
   },
   {
@@ -103,28 +103,28 @@ const routes = [
     component: About,
     meta: {
       title: 'About this Project',
-      metaTags: [
-        {
-          property: 'og:title',
-          content: 'About this project'
-        },
-        {
-          property: 'og:description',
-          content: 'About this project'
-        },
-        {
-          property: 'og:image',
-          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/about.jpg'
-        },
-        {
-          property: 'og:url',
-          content: 'https://vue-threejs-2.vercel.app/about'
-        },
-        {
-          property: 'og:type',
-          content: 'website'
-        },
-      ]
+      // metaTags: [
+      //   {
+      //     property: 'og:title',
+      //     content: 'About this project'
+      //   },
+      //   {
+      //     property: 'og:description',
+      //     content: 'About this project'
+      //   },
+      //   {
+      //     property: 'og:image',
+      //     content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/about.jpg'
+      //   },
+      //   {
+      //     property: 'og:url',
+      //     content: 'https://vue-threejs-2.vercel.app/about'
+      //   },
+      //   {
+      //     property: 'og:type',
+      //     content: 'website'
+      //   },
+      // ]
     }
   },
   {
@@ -133,28 +133,28 @@ const routes = [
     component: PageNotFound,
     meta: {
       title: 'Page NOT Found',
-      metaTags: [
-        {
-          property: 'og:title',
-          content: 'Page NOT Found'
-        },
-        {
-          property: 'og:description',
-          content: 'Page NOT Found'
-        },
-        {
-          property: 'og:image',
-          content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/image_404.jpg'
-        },
-        {
-          property: 'og:url',
-          content: 'https://vue-threejs-2.vercel.app'
-        },
-        {
-          property: 'og:type',
-          content: 'website'
-        },
-      ]
+      // metaTags: [
+      //   {
+      //     property: 'og:title',
+      //     content: 'Page NOT Found'
+      //   },
+      //   {
+      //     property: 'og:description',
+      //     content: 'Page NOT Found'
+      //   },
+      //   {
+      //     property: 'og:image',
+      //     content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/image_404.jpg'
+      //   },
+      //   {
+      //     property: 'og:url',
+      //     content: 'https://vue-threejs-2.vercel.app'
+      //   },
+      //   {
+      //     property: 'og:type',
+      //     content: 'website'
+      //   },
+      // ]
     }
   }
 ]
