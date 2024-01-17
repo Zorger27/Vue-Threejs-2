@@ -8,7 +8,6 @@ export default {
     },
     tweetOnExTwitter() {
       const text = encodeURIComponent('Check out this awesome page!😉👍');
-      // const text = encodeURIComponent(this.$router["meta"].title);
       const url = encodeURIComponent(window.location.href);
       window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
     },
