@@ -8,6 +8,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@vercel/og": "^0.6.2",
     "register-service-worker": "^1.7.2",
     "three": "^0.160.0",
     "three-orbit-controls": "^82.1.0",
