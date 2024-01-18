@@ -1,14 +1,11 @@
 <script>
-import ToggleFullScreen from "@/components/util/ToggleFullScreen.vue";
-import CanvasFullScreen from "@/components/util/CanvasFullScreen.vue";
-import {openGraphMixin} from "@/assets/ogimage/openGraphMixin";
 import {onMounted, onUnmounted, ref} from "vue";
 import * as THREE from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
+import ToggleFullScreen from "@/components/util/ToggleFullScreen.vue";
+import CanvasFullScreen from "@/components/util/CanvasFullScreen.vue";
+import {openGraphMixin} from "@/assets/ogimage/openGraphMixin";
 
-// import { ref, onMounted, onUnmounted } from 'vue';
-// import * as THREE from 'three';
-// import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 export default {
   name: 'Project1',
   components: {CanvasFullScreen, ToggleFullScreen},
@@ -46,8 +43,6 @@ export default {
 
       const textureLoader = new THREE.TextureLoader();
       // Загрузка текстур
-      const textureRight = textureLoader.load('/assets/img/cube2/right.webp');
-      const textureLeft = textureLoader.load('/assets/img/cube2/left.webp');
       const textureFront = textureLoader.load('/assets/img/cube2/front.webp');
       const textureBack = textureLoader.load('/assets/img/cube2/back.webp');
       const textureBottom = textureLoader.load('/assets/img/cube2/bottom.webp');
@@ -58,24 +53,10 @@ export default {
       textureBack.rotation = Math.PI;
       textureBack.needsUpdate = true;
 
-      textureLeft.center = new THREE.Vector2(0.5, 0.5);
-      textureLeft.rotation = Math.PI / 2; // Поворот на 90 градусов
-      textureLeft.needsUpdate = true;
-
-      textureRight.center = new THREE.Vector2(0.5, 0.5);
-      textureRight.rotation = -Math.PI / 2; // Поворот на -90 градусов
-      textureRight.needsUpdate = true;
-
       const geometry = new THREE.BoxGeometry(1, 1, 1);
       const materials = [
-        // new THREE.MeshBasicMaterial({ color: 0xff0000, transparent: true, opacity: 1 }), // right
-        // new THREE.MeshBasicMaterial({ color: 0x00ff00, transparent: true, opacity: 1 }),
-        // new THREE.MeshBasicMaterial({ color: 0xff00ff, transparent: true, opacity: 1 }), // left
-        // new THREE.MeshBasicMaterial({ color: 0x0000ff, transparent: true, opacity: 1 }),
-        // new THREE.MeshBasicMaterial({ color: 0xffff00, transparent: true, opacity: 1 }),
-        // new THREE.MeshBasicMaterial({ color: 0x00ffff, transparent: true, opacity: 1 }), // top
-        new THREE.MeshBasicMaterial({ map: textureRight }),
-        new THREE.MeshBasicMaterial({ map: textureLeft }),
+        new THREE.MeshBasicMaterial({ color: 0x0000ff }), // синий, правый
+        new THREE.MeshBasicMaterial({ color: 0xff0000 }), // красный, левый
         new THREE.MeshBasicMaterial({ map: textureFront }),
         new THREE.MeshBasicMaterial({ map: textureBack }),
         new THREE.MeshBasicMaterial({ map: textureBottom }),
