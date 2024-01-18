@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const openGraphHandler = require('@/assets/ogimage/js-server/openGraphHandler');
+const openGraphHandler = require('@/assets/ogimage/server/openGraphHandler');
 
 // Зарегистрируйте обработчик openGraphHandler как middleware
 app.use('/api/openGraphHandler', openGraphHandler);
