@@ -6,7 +6,7 @@ const SitemapPlugin = require('sitemap-webpack-plugin').default
 module.exports = {
   pages: {
     index: {
-      entry: 'src/main.js',
+      entry: 'src/main.js-server',
       template: 'public/index.html',
       filename: 'index.html',
       title: '3D cube №2',
@@ -49,7 +49,7 @@ module.exports = {
         // ],
         // scripts: [
           // 'https://www.googletagmanager.com/gtag/js?id=G-RVMP917YXN',
-          // '/assets/analytics/ganal.js'
+          // '/assets/analytics/ganal.js-server'
         // ],
         append: true,
         publicPath: false,

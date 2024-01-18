@@ -1,0 +1,29 @@
+1. Install @vercel/og by running the following command inside your project directory:
+npm i @vercel/og
+
+https://vercel.com/docs/functions/edge-functions/og-image-generation
+
+2. Установить Express.js:
+npm install express --save
+
+3. Создайте файл vercel.json в корне проекта.
+Этот файл vercel.json содержит настройки для перенаправления запросов,
+так что запросы к /open-graph будут направляться к серверному роуту openGraphHandler.js.
+
+4. Создать файл server.js в корне проекта.
+
+5. В файле package.json добавить команду для запуска сервера:
+"scripts": {
+  "serve": "vue-cli-service serve",
+  "start": "node server.js",
+  "build": "vue-cli-service build",
+  // Другие команды
+}
+Теперь, когда запускается проект командой npm run start, будет запущен и Express-сервер, и Vue CLI.
+
+6. В компоненте, где используется миксин, надо убедиться, что изображение Open Graph запрашивается через новый серверный роут.
+Например:
+const imageUrl = 'http://localhost:3000/open-graph?imagePath=project1';
+
+Этот пример предполагает, что серверный роут для openGraphHandler будет доступен по URL http://localhost:3000/open-graph.
+Можно настроить путь и порт в соответствии с предпочтениями.

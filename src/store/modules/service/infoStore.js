@@ -3,7 +3,7 @@ const state = {
     [
       {
         id: 1,
-        title: "Three.js",
+        title: "Three.js-server",
         version: "160",
         url: "https://github.com/mrdoob/three.js/releases"
       },
@@ -15,7 +15,7 @@ const state = {
       },
       {
         id: 3,
-        title: "Vue.js",
+        title: "Vue.js-server",
         version: "3.3.10",
         url: "https://v3.ru.vuejs.org"
       },

@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/open-graph/(.*)", "destination": "/api/openGraphHandler" },
+    { "source": "/(.*)", "destination": "/$1" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/api/openGraphHandler", "dest": "src/assets/ogimage/js-server/openGraphHandler.js" }
+  ]
+}

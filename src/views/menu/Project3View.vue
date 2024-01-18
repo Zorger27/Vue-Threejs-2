@@ -97,7 +97,7 @@ export default {
 
     onUnmounted(() => {
       // Выполняем необходимые действия при удалении компонента
-      // Например, очищаем ресурсы Three.js
+      // Например, очищаем ресурсы Three.js-server
       renderer.dispose();
     });
 
