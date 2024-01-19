@@ -23,12 +23,13 @@ export default {
   methods: {},
   setup() {
     const canvasContainer = ref(null);
-    let scene, camera, renderer, cube, controls;
+    let scene, camera, renderer, controls;
+    let rotationPaused = false;
 
     const init = () => {
       scene = new THREE.Scene();
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.set(0, 0, 5);
+      camera.position.set(0, 0, 7);
 
       renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -43,8 +44,6 @@ export default {
 
       // Создаем маленький кубик
       const smallCubeGeometry = new THREE.BoxGeometry(0.8, 0.8, 0.8);
-      const smallCubeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-      const smallCube = new THREE.Mesh(smallCubeGeometry, smallCubeMaterial);
 
       function createTexturedCube(x, y, z, texturePath) {
         const textureLoader = new THREE.TextureLoader();
@@ -58,7 +57,9 @@ export default {
       }
 
       // Создаем главный куб, состоящий из 27 маленьких кубиков
-      const mainCube = new THREE.Group();
+
+      // Первый куб
+      const mainCube1 = new THREE.Group();
 
       for (let x = -1; x <= 1; x++) {
         for (let y = -1; y <= 1; y++) {
@@ -78,26 +79,90 @@ export default {
               cube.position.set(x, y, z);
             }
 
-            mainCube.add(cube);
+            mainCube1.add(cube);
           }
         }
       }
 
-      scene.add(mainCube);
+      // Устанавливаем позицию для первого куба
+      mainCube1.position.x = -2;
+
+      // Второй куб
+      const mainCube2 = new THREE.Group();
+      const smallCubeSize = 0.8; // Размер маленького кубика
+      let colorIndex = 0;
+
+      // 6 уникальных цветов
+      const uniqueColors = [
+        new THREE.Color(0xff0000), // Красный
+        new THREE.Color(0x00ff00), // Зеленый
+        new THREE.Color(0x0000ff), // Синий
+        new THREE.Color(0xffff00), // Желтый
+        new THREE.Color(0xff00ff), // Пурпурный
+        new THREE.Color(0x00ffff), // Бирюзовый
+      ];
+
+      // Перемешиваем массив цветов случайным образом
+      // Алгоритм случайной перестановки Фишера-Йетса для случайного перемешивания массива uniqueColors перед использованием.
+      for (let i = uniqueColors.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [uniqueColors[i], uniqueColors[j]] = [uniqueColors[j], uniqueColors[i]];
+      }
+
+      for (let x = -1; x <= 1; x++) {
+        for (let y = -1; y <= 1; y++) {
+          for (let z = -1; z <= 1; z++) {
+            const randomColor = new THREE.Color(Math.random(), Math.random(), Math.random());
+            const smallCubeMaterial = new THREE.MeshBasicMaterial({ color: randomColor });
+            // const smallCubeMaterial = new THREE.MeshBasicMaterial({ color: uniqueColors[colorIndex] });
+            const cubeClone = new THREE.Mesh(smallCubeGeometry, smallCubeMaterial);
+
+            cubeClone.position.set(x * smallCubeSize, y * smallCubeSize, z * smallCubeSize);
+
+            // Увеличиваем индекс цвета, обеспечивая уникальность цвета для каждого маленького кубика
+            // colorIndex = (colorIndex + 1) % uniqueColors.length;
+
+            mainCube2.add(cubeClone);
+          }
+        }
+      }
+
+      // Устанавливаем позицию для второго куба
+      mainCube2.position.x = 2;
+
+      // Добавляем оба куба в сцену
+      scene.add(mainCube1);
+      scene.add(mainCube2);
 
       // Устанавливаем углы Эйлера (в радианах) для наклона
       const euler = new THREE.Euler(Math.PI / 2, 0.25, 0);
-      // const euler = new THREE.Euler(Math.PI / 4, Math.PI / 4, 0);
-      mainCube.setRotationFromEuler(euler);
+      const euler2 = new THREE.Euler(Math.PI / 4, Math.PI / 4, 0);
+      mainCube1.setRotationFromEuler(euler);
+      mainCube2.setRotationFromEuler(euler2);
 
       const animate = () => {
+        if (rotationPaused) {
+          // Если вращение на паузе, не вызываем анимацию
+          return;
+        }
         requestAnimationFrame(animate);
         controls.update();
         renderer.render(scene, camera);
       };
 
-      animate();
+      // Добавляем обработчик событий для двойного щелчка мыши
+      canvasContainer.value.addEventListener('dblclick', () => {
+        rotationPaused = !rotationPaused; // Инвертируем состояние флага
+
+        if (!rotationPaused) {
+          // Если вращение возобновляется, снова вызываем анимацию
+          animate();
+        }
+      });
+
+      animate(); // Начинаем анимацию сразу после определения функции
     };
+
 
     // const stopRotationAndEnlarge = (event) => {
     //   // Остановить вращение
@@ -147,9 +212,6 @@ export default {
     onMounted(() => {
       init();
       onWindowResize();
-
-      // Обработчик двойного клика при загрузке компонента
-      // canvasContainer.value.addEventListener('dblclick', stopRotationAndEnlarge);
     });
 
     onUnmounted(() => {
