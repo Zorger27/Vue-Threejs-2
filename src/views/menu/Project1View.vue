@@ -90,7 +90,7 @@ export default {
       // Второй куб
       const mainCube2 = new THREE.Group();
       const smallCubeSize = 0.8; // Размер маленького кубика
-      let colorIndex = 0;
+      // let colorIndex = 0;
 
       // 6 уникальных цветов
       const uniqueColors = [
