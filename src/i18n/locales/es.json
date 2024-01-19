@@ -6,8 +6,9 @@
   },
   "header": {
     "prg01": "Cubo más nuevo",
-    "prg02": "Cubo v.2.0",
-    "prg03": "Cubo viejo",
+    "prg02": "Cubo v.3.0",
+    "prg03": "Cubo v.2.0",
+    "prg04": "Cubo viejo",
     "about": "Sobre"
   },
   "footer": {
@@ -21,10 +22,14 @@
     "disc": "Descripción"
   },
   "project2": {
-    "name": "Cubo v.2.0",
+    "name": "Cubo v.3.0",
     "disc": "Descripción"
   },
   "project3": {
+    "name": "Cubo v.2.0",
+    "disc": "Descripción"
+  },
+  "project4": {
     "name": "Cubo viejo",
     "disc": "Descripción"
   },

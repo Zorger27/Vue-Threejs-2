@@ -7,15 +7,15 @@ import CanvasFullScreen from "@/components/util/CanvasFullScreen.vue";
 import {openGraphMixin} from "@/assets/ogimage/openGraphMixin";
 
 export default {
-  name: 'Project3',
+  name: 'Project4',
   components: {CanvasFullScreen, ToggleFullScreen},
   mixins: [openGraphMixin],
   mounted() {
     const metaDescription = 'Rotating 3D Cube';
-    const title = '3D cube v.2.0';
-    const description = 'Rotating 3D cube v.2.0';
+    const title = '3D cube Old';
+    const description = 'Rotating 3D cube Old';
     const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project3.jpg';
-    const url = 'https://vue-threejs-2.vercel.app/cube2';
+    const url = 'https://vue-threejs-2.vercel.app/cube-old';
 
     // Dynamically set open graph tags
     this.setOpenGraphTags(metaDescription, title, description, imageUrl, url);
@@ -23,69 +23,56 @@ export default {
   methods: {},
   setup() {
     const canvasContainer = ref(null);
-    let scene, camera, renderer, cube, controls;
+    let scene, camera, renderer, cube;
 
     const init = () => {
+      // Создаем сцену
       scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.set(0, 0, 2.5);
 
+      // Создаем камеру
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 2.5;
+
+      // Создаем рендерер
+      // renderer = new THREE.WebGLRenderer();
       renderer = new THREE.WebGLRenderer({ alpha: true });
+      // renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setSize(window.innerWidth, window.innerHeight);
 
-      controls = new OrbitControls(camera, renderer.domElement);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      controls.enablePan = false;
-      controls.enableZoom = true;
 
-      controls.autoRotate = true;
-      controls.autoRotateSpeed = 5.0;
+      scene.add(camera);
 
-      const textureLoader = new THREE.TextureLoader();
-      // Загрузка текстур
-      const textureRight = textureLoader.load('/assets/img/cube2/right.webp');
-      const textureLeft = textureLoader.load('/assets/img/cube2/left.webp');
-      const textureFront = textureLoader.load('/assets/img/cube2/front.webp');
-      const textureBack = textureLoader.load('/assets/img/cube2/back.webp');
-      const textureBottom = textureLoader.load('/assets/img/cube2/bottom.webp');
-      const textureTop = textureLoader.load('/assets/img/cube2/top.webp');
-
-      // Поворот UV-координат для текстуры
-      textureBack.center = new THREE.Vector2(0.5, 0.5);
-      textureBack.rotation = Math.PI;
-      textureBack.needsUpdate = true;
-
-      textureLeft.center = new THREE.Vector2(0.5, 0.5);
-      textureLeft.rotation = Math.PI / 2; // Поворот на 90 градусов
-      textureLeft.needsUpdate = true;
-
-      textureRight.center = new THREE.Vector2(0.5, 0.5);
-      textureRight.rotation = -Math.PI / 2; // Поворот на -90 градусов
-      textureRight.needsUpdate = true;
-
+      // Создаем геометрию и материал для куба
       const geometry = new THREE.BoxGeometry(1, 1, 1);
       const materials = [
-        new THREE.MeshBasicMaterial({ map: textureRight }),
-        new THREE.MeshBasicMaterial({ map: textureLeft }),
-        new THREE.MeshBasicMaterial({ map: textureFront }),
-        new THREE.MeshBasicMaterial({ map: textureBack }),
-        new THREE.MeshBasicMaterial({ map: textureBottom }),
-        new THREE.MeshBasicMaterial({ map: textureTop }),
+        new THREE.MeshBasicMaterial({ color: 0xff0000, transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ color: 0x00ff00, transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ color: 0x0000ff, transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ color: 0xffff00, transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ color: 0xff00ff, transparent: true, opacity: 1 }),
+        new THREE.MeshBasicMaterial({ color: 0x00ffff, transparent: true, opacity: 1 }),
       ];
-
       cube = new THREE.Mesh(geometry, materials);
 
-      // Устанавливаем углы Эйлера (в радианах) для наклона
-      const euler = new THREE.Euler(Math.PI / 2, 0.25, 0);
-      cube.setRotationFromEuler(euler);
-
+      // Добавляем куб на сцену
       scene.add(cube);
 
+      // Добавляем рендерер в контейнер
       canvasContainer.value.appendChild(renderer.domElement);
 
+      // Обновляем сцену
       const animate = () => {
         requestAnimationFrame(animate);
+
+        // Обновление контроллеров для вращения сцены
         controls.update();
+
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+
         renderer.render(scene, camera);
       };
 
@@ -95,8 +82,10 @@ export default {
     const onWindowResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
+
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      // renderer.render(scene, camera);
     };
 
     window.addEventListener('resize', onWindowResize);
@@ -107,6 +96,8 @@ export default {
     });
 
     onUnmounted(() => {
+      // Выполняем необходимые действия при удалении компонента
+      // Например, очищаем ресурсы Three.js-server
       renderer.dispose();
     });
 
@@ -119,7 +110,7 @@ export default {
 
 <template>
   <div class="container">
-    <h1>{{ $t('project3.name') }} <CanvasFullScreen :canvasContainer="canvasContainer"></CanvasFullScreen> <ToggleFullScreen></ToggleFullScreen></h1>
+    <h1>{{ $t('project4.name') }} <CanvasFullScreen :canvasContainer="canvasContainer"></CanvasFullScreen> <ToggleFullScreen></ToggleFullScreen></h1>
     <line></line>
     <div class="scene-container" ref="canvasContainer"></div>
   </div>
@@ -128,7 +119,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   flex: 1 0 auto;
-  background: linear-gradient(to bottom, rgb(229, 251, 255), rgb(255, 240, 244)) no-repeat center;
+  background: linear-gradient(to bottom, rgb(229, 255, 229), rgb(250, 247, 234)) no-repeat center;
   h1 {font-size: 2.5rem;margin: 0.7rem auto;color: black;}
   .scene-container {
     max-height: 70vh;
@@ -149,6 +140,6 @@ export default {
 @media (max-width: 768px) {
   .container {
     h1 {font-size: 2rem;margin: 0.5rem auto;}
-    .fa.fa-expand-arrows-alt {display: none;}  }
+  }
 }
 </style>

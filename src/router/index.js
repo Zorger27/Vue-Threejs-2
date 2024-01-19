@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import Project1 from "@/views/menu/Project1View.vue";
 import Project2 from "@/views/menu/Project2View.vue";
 import Project3 from "@/views/menu/Project3View.vue";
+import Project4 from "@/views/menu/Project4View.vue";
 import About from "@/views/menu/AboutView.vue";
 import PageNotFound from "@/views/service/PageNotFound.vue";
 
@@ -36,11 +37,40 @@ const routes = [
       // ]
     }
   },
-
   {
-    path: '/cube2',
+    path: '/cube3',
     name: 'project2',
     component: Project2,
+    meta: {
+      title: '3D cube v.3.0',
+      // metaTags: [
+      //   {
+      //     property: 'og:title',
+      //     content: '3D cube v.3.0'
+      //   },
+      //   {
+      //     property: 'og:description',
+      //     content: '3D cube v.3.0'
+      //   },
+      //   {
+      //     property: 'og:image',
+      //     content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project2.jpg'
+      //   },
+      //   {
+      //     property: 'og:url',
+      //     content: 'https://vue-threejs-2.vercel.app/cube3'
+      //   },
+      //   {
+      //     property: 'og:type',
+      //     content: 'website'
+      //   },
+      // ]
+    }
+  },
+  {
+    path: '/cube2',
+    name: 'project3',
+    component: Project3,
     meta: {
       title: '3D cube v.2.0',
       // metaTags: [
@@ -54,7 +84,7 @@ const routes = [
       //   },
       //   {
       //     property: 'og:image',
-      //     content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project2.jpg'
+      //     content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project3.jpg'
       //   },
       //   {
       //     property: 'og:url',
@@ -69,8 +99,8 @@ const routes = [
   },
   {
     path: '/cube-old',
-    name: 'project3',
-    component: Project3,
+    name: 'project4',
+    component: Project4,
     meta: {
       title: '3D cube Old',
       // metaTags: [
@@ -84,7 +114,7 @@ const routes = [
       //   },
       //   {
       //     property: 'og:image',
-      //     content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project3.jpg'
+      //     content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project4.jpg'
       //   },
       //   {
       //     property: 'og:url',
