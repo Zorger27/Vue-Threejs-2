@@ -28,50 +28,67 @@ export default {
     const init = () => {
       scene = new THREE.Scene();
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.set(0, 0, 3);
+      camera.position.set(0, 0, 5);
 
       renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
+      canvasContainer.value.appendChild(renderer.domElement);
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
       controls.enablePan = false;
       controls.enableZoom = true;
-
       controls.autoRotate = true;
       controls.autoRotateSpeed = 5.0;
 
-      const textureLoader = new THREE.TextureLoader();
-      // Загрузка текстур
-      const textureFront = textureLoader.load('/assets/img/cube2/front.webp');
-      const textureBack = textureLoader.load('/assets/img/cube2/back.webp');
-      const textureBottom = textureLoader.load('/assets/img/cube2/bottom.webp');
-      const textureTop = textureLoader.load('/assets/img/cube2/top.webp');
+      // Создаем маленький кубик
+      const smallCubeGeometry = new THREE.BoxGeometry(0.8, 0.8, 0.8);
+      const smallCubeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+      const smallCube = new THREE.Mesh(smallCubeGeometry, smallCubeMaterial);
 
-      // Поворот UV-координат для текстуры
-      textureBack.center = new THREE.Vector2(0.5, 0.5);
-      textureBack.rotation = Math.PI;
-      textureBack.needsUpdate = true;
+      function createTexturedCube(x, y, z, texturePath) {
+        const textureLoader = new THREE.TextureLoader();
+        const texture = textureLoader.load(texturePath);
 
-      const geometry = new THREE.BoxGeometry(1, 1, 1);
-      const materials = [
-        new THREE.MeshBasicMaterial({ color: 0x0000ff }), // синий, правый
-        new THREE.MeshBasicMaterial({ color: 0xff0000 }), // красный, левый
-        new THREE.MeshBasicMaterial({ map: textureFront }),
-        new THREE.MeshBasicMaterial({ map: textureBack }),
-        new THREE.MeshBasicMaterial({ map: textureBottom }),
-        new THREE.MeshBasicMaterial({ map: textureTop }),
-      ];
+        const material = new THREE.MeshBasicMaterial({ map: texture });
+        const cubeClone = new THREE.Mesh(smallCubeGeometry, material);
+        cubeClone.position.set(x, y, z);
 
-      cube = new THREE.Mesh(geometry, materials);
+        return cubeClone;
+      }
+
+      // Создаем главный куб, состоящий из 27 маленьких кубиков
+      const mainCube = new THREE.Group();
+
+      for (let x = -1; x <= 1; x++) {
+        for (let y = -1; y <= 1; y++) {
+          for (let z = -1; z <= 1; z++) {
+            let cube;
+
+            if (x === 1 && y === 1 && z === 0) {
+              cube = createTexturedCube(x, y, z, '/assets/img/cube2/top.webp');
+            } else if (x === -1 && y === -1 && z === 0) {
+              cube = createTexturedCube(x, y, z, '/assets/img/cube2/bottom.webp');
+            } else if (x === 1 && y === -1 && z === 1) {
+              cube = createTexturedCube(x, y, z, '/assets/background/background01.webp');
+            } else {
+              const randomColor = new THREE.Color(Math.random(), Math.random(), Math.random());
+              const smallCubeMaterial = new THREE.MeshBasicMaterial({ color: randomColor });
+              cube = new THREE.Mesh(smallCubeGeometry, smallCubeMaterial);
+              cube.position.set(x, y, z);
+            }
+
+            mainCube.add(cube);
+          }
+        }
+      }
+
+      scene.add(mainCube);
 
       // Устанавливаем углы Эйлера (в радианах) для наклона
       const euler = new THREE.Euler(Math.PI / 2, 0.25, 0);
-      cube.setRotationFromEuler(euler);
-
-      scene.add(cube);
-
-      canvasContainer.value.appendChild(renderer.domElement);
+      // const euler = new THREE.Euler(Math.PI / 4, Math.PI / 4, 0);
+      mainCube.setRotationFromEuler(euler);
 
       const animate = () => {
         requestAnimationFrame(animate);
@@ -94,8 +111,8 @@ export default {
     // const raycaster = new THREE.Raycaster();
     // raycaster.setFromCamera({x: mouseX, y: mouseY}, camera);
     // const intersects = raycaster.intersectObjects([cube]);
-
-    // Если есть пересечение с кубом, повернуть его и увеличить на 20%
+    //
+    // // Если есть пересечение с кубом, повернуть его и увеличить на 20%
     // if (intersects.length > 0) {
     //   const intersection = intersects[0];
     //   const face = intersection.face;
@@ -105,17 +122,17 @@ export default {
     //
     //   // Вычислить угол поворота для выравнивания куба с плоскостью касательной
     //   const angle = Math.atan2(normal.y, normal.x);
-
-    // Увеличить куб на 20%
-    // cube.scale.multiplyScalar(1.2);
-
-    // // Повернуть куб в вычисленный угол
-    // cube.rotation.z = angle;
-    // cube.rotation.y = Math.PI / 2 - angle;
-
-    // Удалить обработчик событий после первого клика
-    // canvasContainer.value.removeEventListener('dblclick', stopRotationAndEnlarge);
-    // }
+    //
+    //   // Увеличить куб на 20%
+    //   cube.scale.multiplyScalar(1.2);
+    //
+    //   // Повернуть куб в вычисленный угол
+    //   cube.rotation.z = angle;
+    //   cube.rotation.y = Math.PI / 2 - angle;
+    //
+    //   // Удалить обработчик событий после первого клика
+    //   canvasContainer.value.removeEventListener('dblclick', stopRotationAndEnlarge);
+    //   }
     // }
 
     const onWindowResize = () => {
