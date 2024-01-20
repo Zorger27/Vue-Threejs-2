@@ -45,6 +45,22 @@ export default {
       // Создаем маленький кубик
       const smallCubeGeometry1 = new THREE.BoxGeometry(0.8, 0.8, 0.8);
 
+      // Определение массива текстурных путей
+      const texturePaths = [
+        '/assets/img/cube3/cube3-01.webp', '/assets/img/cube3/cube3-02.webp', '/assets/img/cube3/cube3-03.webp',
+        '/assets/img/cube3/cube3-04.webp', '/assets/img/cube3/cube3-05.webp', '/assets/img/cube3/cube3-06.webp',
+        '/assets/img/cube3/cube3-07.webp', '/assets/img/cube3/cube3-08.webp', '/assets/img/cube3/cube3-09.webp',
+        '/assets/img/cube3/cube3-10.webp', '/assets/img/cube3/cube3-11.webp', '/assets/img/cube3/cube3-12.webp',
+        '/assets/img/cube3/cube3-13.webp', '/assets/img/cube3/cube3-14.webp', '/assets/img/cube3/cube3-15.webp',
+        '/assets/img/cube3/cube3-16.webp', '/assets/img/cube3/cube3-17.webp', '/assets/img/cube3/cube3-18.webp',
+        '/assets/img/cube3/cube3-19.webp', '/assets/img/cube3/cube3-20.webp', '/assets/img/cube3/cube3-21.webp',
+        '/assets/img/cube3/cube3-22.webp', '/assets/img/cube3/cube3-23.webp', '/assets/img/cube3/cube3-24.webp',
+        '/assets/img/cube3/cube3-25.webp', '/assets/img/cube3/cube3-26.webp', '/assets/img/cube3/cube3-27.webp'
+      ];
+
+      // Перемешиваем массив текстурных путей
+      texturePaths.sort(() => Math.random() - 0.5);
+
       function createTexturedCube(x, y, z, texturePath) {
         const textureLoader = new THREE.TextureLoader();
         const texture = textureLoader.load(texturePath);
@@ -55,28 +71,26 @@ export default {
 
         return cubeClone;
       }
-      // Создаем главный куб, состоящий из 27 маленьких кубиков
-      // Первый куб
+
+// Создаем главный куб, состоящий из 27 маленьких кубиков
       const mainCube1 = new THREE.Group();
+
+      let textureIndex = 0;
 
       for (let x = -1; x <= 1; x++) {
         for (let y = -1; y <= 1; y++) {
           for (let z = -1; z <= 1; z++) {
             let cube;
 
-            if (x === 1 && y === 1 && z === 0) {
-              cube = createTexturedCube(x, y, z, '/assets/img/cube2/top.webp');
-            } else if (x === -1 && y === -1 && z === 0) {
-              cube = createTexturedCube(x, y, z, '/assets/img/cube2/bottom.webp');
-            } else if (x === 1 && y === -1 && z === 1) {
-              cube = createTexturedCube(x, y, z, '/assets/background/background01.webp');
-            } else if (x === -1 && y === 1 && z === -1) {
-              cube = createTexturedCube(x, y, z, '/assets/background/background02.webp');
+            // Проверка наличия текстур в массиве
+            if (textureIndex < texturePaths.length) {
+              cube = createTexturedCube(x, y, z, texturePaths[textureIndex]);
+              textureIndex++;
             } else {
-              const randomColor = new THREE.Color(Math.random(), Math.random(), Math.random());
-              const smallCubeMaterial = new THREE.MeshBasicMaterial({ color: randomColor });
-              cube = new THREE.Mesh(smallCubeGeometry1, smallCubeMaterial);
-              cube.position.set(x, y, z);
+              // В случае отсутствия новых текстур, повторно используем те, которые уже использовали
+              const repeatedTextureIndex = (textureIndex % texturePaths.length);
+              cube = createTexturedCube(x, y, z, texturePaths[repeatedTextureIndex]);
+              textureIndex++;
             }
 
             mainCube1.add(cube);
@@ -197,10 +211,10 @@ export default {
       const materials = [
         new THREE.MeshBasicMaterial({ map: textureRight }),
         new THREE.MeshBasicMaterial({ map: textureLeft }),
+        new THREE.MeshBasicMaterial({ map: textureTop }),
+        new THREE.MeshBasicMaterial({ map: textureBottom }),
         new THREE.MeshBasicMaterial({ map: textureFront }),
         new THREE.MeshBasicMaterial({ map: textureBack }),
-        new THREE.MeshBasicMaterial({ map: textureBottom }),
-        new THREE.MeshBasicMaterial({ map: textureTop }),
       ];
 
       mainCube3 = new THREE.Mesh(geometry, materials);
