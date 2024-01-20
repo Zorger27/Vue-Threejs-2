@@ -90,14 +90,37 @@ export default {
       // Второй куб
       const mainCube2 = new THREE.Group();
       const smallCubeSize = 0.8; // Размер маленького кубика
+      // let colorIndex = 0;
+
+      // 6 уникальных цветов
+      const uniqueColors = [
+        new THREE.Color(0xff0000), // Красный
+        new THREE.Color(0x00ff00), // Зеленый
+        new THREE.Color(0x0000ff), // Синий
+        new THREE.Color(0xffff00), // Желтый
+        new THREE.Color(0xff00ff), // Пурпурный
+        new THREE.Color(0x00ffff), // Бирюзовый
+      ];
+
+      // Перемешиваем массив цветов случайным образом
+      // Алгоритм случайной перестановки Фишера-Йетса для случайного перемешивания массива uniqueColors перед использованием.
+      for (let i = uniqueColors.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [uniqueColors[i], uniqueColors[j]] = [uniqueColors[j], uniqueColors[i]];
+      }
 
       for (let x = -1; x <= 1; x++) {
         for (let y = -1; y <= 1; y++) {
           for (let z = -1; z <= 1; z++) {
             const randomColor = new THREE.Color(Math.random(), Math.random(), Math.random());
             const smallCubeMaterial = new THREE.MeshBasicMaterial({ color: randomColor });
+            // const smallCubeMaterial = new THREE.MeshBasicMaterial({ color: uniqueColors[colorIndex] });
             const cubeClone = new THREE.Mesh(smallCubeGeometry, smallCubeMaterial);
+
             cubeClone.position.set(x * smallCubeSize, y * smallCubeSize, z * smallCubeSize);
+
+            // Увеличиваем индекс цвета, обеспечивая уникальность цвета для каждого маленького кубика
+            // colorIndex = (colorIndex + 1) % uniqueColors.length;
 
             mainCube2.add(cubeClone);
           }
@@ -130,7 +153,6 @@ export default {
       // Добавляем обработчик событий для двойного щелчка мыши
       canvasContainer.value.addEventListener('dblclick', () => {
         rotationPaused = !rotationPaused; // Инвертируем состояние флага
-
         if (!rotationPaused) {
           // Если вращение возобновляется, снова вызываем анимацию
           animate();
@@ -139,6 +161,42 @@ export default {
 
       animate(); // Начинаем анимацию сразу после определения функции
     };
+
+    // const stopRotationAndEnlarge = (event) => {
+    //   // Остановить вращение
+    //   controls.autoRotate = false;
+    //
+    // // Получить позицию клика внутри холста
+    // const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+    // const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    //
+    // // Определить объект, на который кликнули
+    // const raycaster = new THREE.Raycaster();
+    // raycaster.setFromCamera({x: mouseX, y: mouseY}, camera);
+    // const intersects = raycaster.intersectObjects([cube]);
+    //
+    // // Если есть пересечение с кубом, повернуть его и увеличить на 20%
+    // if (intersects.length > 0) {
+    //   const intersection = intersects[0];
+    //   const face = intersection.face;
+    //
+    //   // Вычислить нормаль касательной к поверхности куба
+    //   const normal = face.normal.clone().applyQuaternion(cube.quaternion);
+    //
+    //   // Вычислить угол поворота для выравнивания куба с плоскостью касательной
+    //   const angle = Math.atan2(normal.y, normal.x);
+    //
+    //   // Увеличить куб на 20%
+    //   cube.scale.multiplyScalar(1.2);
+    //
+    //   // Повернуть куб в вычисленный угол
+    //   cube.rotation.z = angle;
+    //   cube.rotation.y = Math.PI / 2 - angle;
+    //
+    //   // Удалить обработчик событий после первого клика
+    //   canvasContainer.value.removeEventListener('dblclick', stopRotationAndEnlarge);
+    //   }
+    // }
 
     const onWindowResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
