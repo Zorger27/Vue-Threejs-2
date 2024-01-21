@@ -319,6 +319,21 @@ export default {
         renderer.render(scene, camera);
       };
 
+      // Объект-группа для всей сцены
+      const sceneGroup = new THREE.Group();
+      scene.add(sceneGroup);
+
+      // Все объекты вместо scene прямо в sceneGroup
+      sceneGroup.add(mainCube1);
+      sceneGroup.add(mainCube2);
+      sceneGroup.add(orbitLine2)
+      sceneGroup.add(mainCube3);
+      sceneGroup.add(orbitLine3)
+
+      // Вращение всей группы сцены
+      const sceneRotationAngle = 10; // Угол в градусах
+      sceneGroup.rotation.x = THREE.MathUtils.degToRad(sceneRotationAngle);
+
       // Добавляем обработчик событий для двойного щелчка мыши
       canvasContainer.value.addEventListener('dblclick', () => {
         rotationPaused = !rotationPaused; // Инвертируем состояние флага
