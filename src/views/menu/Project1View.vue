@@ -29,7 +29,7 @@ export default {
     const init = () => {
       scene = new THREE.Scene();
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.set(0, 0, 8);
+      camera.position.set(0, 0, 8.5);
 
       renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -72,7 +72,7 @@ export default {
         return cubeClone;
       }
 
-// Создаем главный куб, состоящий из 27 маленьких кубиков
+      // Создаем главный куб, состоящий из 27 маленьких кубиков
       const mainCube1 = new THREE.Group();
 
       let textureIndex = 0;
@@ -110,10 +110,59 @@ export default {
       // Создаем маленький кубик для mainCube2
       const smallCubeGeometry2 = new THREE.BoxGeometry(smallCubeSize, smallCubeSize, smallCubeSize);
 
+      // Яркие цвета для второго куба
+      const brightColors = [
+        0xff0000,  // Красный
+        0x00ff00,  // Зеленый
+        0x0000ff,  // Синий
+        0xffff00,  // Желтый
+        0xff00ff,  // Пурпурный
+        0x00ffff,  // Бирюзовый
+        0xff4500,  // Оранжевый
+        0x8a2be2,  // Сиреневый
+        0x32cd32,  // Ярко-зеленый
+        0xffd700,  // Золотой
+        0xff69b4,  // Розовый
+        0x9400d3,  // Фиолетовый
+        0x00fa9a,  // Морская волна
+        0xff8c00,  // Темно-оранжевый
+        0x8b4513,  // Коричневый
+        0x00ced1,  // Темно-бирюзовый
+        0xf0e68c,  // Хаки
+        0xff6347,  // Темно-красный
+        0x87ceeb,  // Светло-голубой
+        0x4682b4,  // Синевато-серый
+        0x9932cc,  // Темно-фиолетовый
+        0x2e8b57,  // Зеленовато-коричневый
+        0xff1493,  // Глубокий розовый
+        0x7cfc00,  // Лайм
+        0xb22222,  // Огненно-красный
+        0x20b2aa,  // Синевато-зеленый
+        0xff4500   // Красновато-коричневый
+      ];
+
+      // Перемешиваем массив brightColors
+      const shuffledColors = brightColors.slice().sort(() => Math.random() - 0.5);
+
+      // Массив для отслеживания использованных цветов
+      const usedColors = [];
+
+      // Используем перемешанные цвета для создания кубиков
       for (let x = -1; x <= 1; x++) {
         for (let y = -1; y <= 1; y++) {
           for (let z = -1; z <= 1; z++) {
-            const randomColor = new THREE.Color(Math.random(), Math.random(), Math.random());
+            let randomColor;
+
+            // Проверка, что остались неиспользованные цвета
+            if (usedColors.length < shuffledColors.length) {
+              // Получаем цвет из оставшихся неиспользованных
+              randomColor = new THREE.Color(shuffledColors[usedColors.length]);
+              usedColors.push(shuffledColors[usedColors.length]);
+            } else {
+              // В случае, если все цвета уже использованы, берем рандомный цвет из массива
+              randomColor = new THREE.Color(shuffledColors[Math.floor(Math.random() * shuffledColors.length)]);
+            }
+
             const smallCubeMaterial = new THREE.MeshBasicMaterial({ color: randomColor });
             const cubeClone = new THREE.Mesh(smallCubeGeometry2, smallCubeMaterial);
             cubeClone.position.set(x * smallCubeSize, y * smallCubeSize, z * smallCubeSize);
