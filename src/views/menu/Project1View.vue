@@ -192,8 +192,8 @@ export default {
       for (let i = 0; i <= 360; i++) {
         const angle = (i * Math.PI) / 180;
         const x = semiMajorAxis2 * Math.cos(angle);
-        const y = 0;
-        const z = semiMinorAxis2 * Math.sin(angle);
+        const y = semiMinorAxis2 * Math.sin(angle);
+        const z = 0;
         orbitPoints2.push(x, y, z);
       }
 
@@ -201,7 +201,6 @@ export default {
 
       // Создаем объект Line для орбиты mainCube2
       const orbitLine2 = new THREE.Line(orbitGeometry2, orbitMaterial);
-      orbitLine2.rotation.y = Math.PI / 4; // 45 градусов поворот
 
       // Добавляем линию в сцену
       scene.add(orbitLine2);
@@ -212,8 +211,8 @@ export default {
         const angle = orbitDirection2 * time * orbitSpeed2 + orbitAngle2; // Учитываем направление
 
         const x = semiMajorAxis2 * Math.cos(angle);
-        const y = 0;
-        const z = semiMinorAxis2 * Math.sin(angle);
+        const y = semiMinorAxis2 * Math.sin(angle);
+        const z = 0;
 
         mainCube2.position.set(x, y, z);
       };
@@ -221,7 +220,7 @@ export default {
       // Анимация движения по орбите mainCube2
       const animateOrbit2 = () => {
         updateOrbitPosition2();
-        orbitLine2.rotation.y = mainCube2.rotation.y; // Синхронизация поворота линии орбиты
+        // orbitLine2.rotation.y = mainCube2.rotation.y; // Синхронизация поворота линии орбиты
         requestAnimationFrame(animateOrbit2);
       };
 
@@ -242,19 +241,6 @@ export default {
       const textureBack = textureLoader.load('/assets/img/cube2/back.webp');
       const textureBottom = textureLoader.load('/assets/img/cube2/bottom.webp');
       const textureTop = textureLoader.load('/assets/img/cube2/top.webp');
-
-      // // Поворот UV-координат для текстуры
-      // textureBack.center = new THREE.Vector2(0.5, 0.5);
-      // textureBack.rotation = Math.PI;
-      // textureBack.needsUpdate = true;
-      //
-      // textureLeft.center = new THREE.Vector2(0.5, 0.5);
-      // textureLeft.rotation = Math.PI / 2; // Поворот на 90 градусов
-      // textureLeft.needsUpdate = true;
-      //
-      // textureRight.center = new THREE.Vector2(0.5, 0.5);
-      // textureRight.rotation = -Math.PI / 2; // Поворот на -90 градусов
-      // textureRight.needsUpdate = true;
 
       const geometry = new THREE.BoxGeometry(0.8, 0.8, 0.8);
       const materials = [
@@ -294,7 +280,6 @@ export default {
 
       // Создаем объект Line для орбиты mainCube3
       const orbitLine3 = new THREE.Line(orbitGeometry3, orbitMaterial);
-      orbitLine3.rotation.y = -Math.PI / 4; // -45 градусов поворот
 
       // Добавляем линию орбиты в сцену
       scene.add(orbitLine3);
