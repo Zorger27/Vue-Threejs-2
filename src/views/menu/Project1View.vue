@@ -220,7 +220,6 @@ export default {
       // Анимация движения по орбите mainCube2
       const animateOrbit2 = () => {
         updateOrbitPosition2();
-        // orbitLine2.rotation.y = mainCube2.rotation.y; // Синхронизация поворота линии орбиты
         requestAnimationFrame(animateOrbit2);
       };
 
