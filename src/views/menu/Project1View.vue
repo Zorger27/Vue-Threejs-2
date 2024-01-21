@@ -181,8 +181,7 @@ export default {
       mainCube2.position.set(semiMajorAxis2 * Math.cos(orbitAngle2), 0, semiMinorAxis2 * Math.sin(orbitAngle2));
 
       // Создаем материал для линии
-      // const orbitMaterial = new THREE.LineBasicMaterial({ color: 0x00aaff });
-      const orbitMaterial = new THREE.LineBasicMaterial({ color: 0x00aaff, linewidth: 2 });
+      const orbitMaterial2 = new THREE.LineBasicMaterial({ color: 0x00aaff, linewidth: 2 });
 
       // Создаем геометрию для линии орбиты mainCube2
       const orbitGeometry2 = new THREE.BufferGeometry();
@@ -200,7 +199,7 @@ export default {
       orbitGeometry2.setAttribute('position', new THREE.Float32BufferAttribute(orbitPoints2, 3));
 
       // Создаем объект Line для орбиты mainCube2
-      const orbitLine2 = new THREE.Line(orbitGeometry2, orbitMaterial);
+      const orbitLine2 = new THREE.Line(orbitGeometry2, orbitMaterial2);
 
       // Добавляем линию в сцену
       scene.add(orbitLine2);
@@ -262,6 +261,9 @@ export default {
 
       mainCube3.position.set(semiMajorAxis3 * Math.cos(orbitAngle3), 0, semiMinorAxis3 * Math.sin(orbitAngle3));
 
+      // Создаем материал для линии
+      const orbitMaterial3 = new THREE.LineBasicMaterial({ color: 0x8a2be2, linewidth: 2 });
+
       // Создаем геометрию для линии орбиты mainCube3
       const orbitGeometry3 = new THREE.BufferGeometry();
       const orbitPoints3 = [];
@@ -278,7 +280,7 @@ export default {
       orbitGeometry3.setAttribute('position', new THREE.Float32BufferAttribute(orbitPoints3, 3));
 
       // Создаем объект Line для орбиты mainCube3
-      const orbitLine3 = new THREE.Line(orbitGeometry3, orbitMaterial);
+      const orbitLine3 = new THREE.Line(orbitGeometry3, orbitMaterial3);
 
       // Добавляем линию орбиты в сцену
       scene.add(orbitLine3);
