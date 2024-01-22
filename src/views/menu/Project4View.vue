@@ -11,10 +11,10 @@ export default {
   components: {CanvasFullScreen, ToggleFullScreen},
   mixins: [openGraphMixin],
   mounted() {
-    const metaDescription = 'Rotating 3D Cube';
     const title = '3D cube Old';
+    const metaDescription = 'Rotating 3D Cube';
     const description = 'Rotating 3D cube Old';
-    const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project3.jpg';
+    const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project4.jpg';
     const url = 'https://vue-threejs-2.vercel.app/cube-old';
 
     // Dynamically set open graph tags

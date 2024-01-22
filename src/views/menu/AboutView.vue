@@ -17,8 +17,8 @@ export default {
     };
   },
   mounted() {
-    const metaDescription = 'Rotating 3D Cube';
     const title = 'About this Project';
+    const metaDescription = 'Rotating 3D Cube';
     const description = 'About this Project (3D cubes)';
     const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/about.jpg';
     const url = 'https://vue-threejs-2.vercel.app/about';
