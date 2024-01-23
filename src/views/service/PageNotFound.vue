@@ -5,14 +5,15 @@ export default {
   name: 'PageNotFound',
   mixins: [openGraphMixin],
   mounted() {
-    const title = 'Page NOT Found';
-    const metaDescription = 'Page NOT Found';
-    const description = 'Page NOT Found';
+    const mainTitle = 'Page NOT Found';
+    const title = '3D cube №2 - Page NOT Found';
+    const metaDescription = 'Rotating 3D cube №2';
+    const description = '3D cube №2 - Page NOT Found';
     const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/image_404.jpg';
     const url = 'https://vue-threejs-2.vercel.app';
 
-    // Dynamically set open graph tags
     this.setOpenGraphTags(metaDescription, title, description, imageUrl, url);
+    this.setPageTitle(mainTitle);
   },
   components: {},
   methods: {},

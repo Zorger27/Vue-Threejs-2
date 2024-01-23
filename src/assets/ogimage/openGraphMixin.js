@@ -1,22 +1,21 @@
 export const openGraphMixin = {
   methods: {
-    setOpenGraphTags(metaDescription, title, description, imageUrl, url) {
-
-      // document.title = title;
+    setPageTitle(mainTitle) {
       // Проверка, существует ли уже тег <title>
-
       let pageTitle = document.querySelector('title');
 
       if (pageTitle) {
         // Если тег <title> существует, обновить его содержимое
-        pageTitle.innerText = title;
+        pageTitle.innerText = mainTitle;
       } else {
         // Если тег <title> не существует, создать новый
         const newTitleTag = document.createElement('title');
-        newTitleTag.innerText = title;
+        newTitleTag.innerText = mainTitle;
         document.head.appendChild(newTitleTag);
       }
+    },
 
+    setOpenGraphTags(metaDescription, title, description, imageUrl, url) {
       const metaTags = [
         { name: 'description', content: metaDescription },
         { property: 'og:title', content: title },
@@ -39,13 +38,13 @@ export const openGraphMixin = {
         }
         meta.setAttribute('content', metaTag.content);
 
-        // Remove existing meta tags with the same property or name
+        // Удалить существующие мета-теги с тем же property или name
         const existingMetaTags = document.querySelectorAll(
           `[property="${metaTag.property}"], [name="${metaTag.name}"]`
         );
         existingMetaTags.forEach((tag) => tag.remove());
 
-        // Add the new meta tag
+        // Добавить новый мета-тег
         document.head.appendChild(meta);
       });
     },
