@@ -1,7 +1,10 @@
 export const openGraphMixin = {
   methods: {
     setOpenGraphTags(metaDescription, title, description, imageUrl, url) {
+
+      // document.title = title;
       // Проверка, существует ли уже тег <title>
+
       let pageTitle = document.querySelector('title');
 
       if (pageTitle) {
@@ -28,25 +31,22 @@ export const openGraphMixin = {
       ];
 
       metaTags.forEach((metaTag) => {
-        // Проверка, существует ли уже элемент с таким property или name
-        const existingMetaTag = document.querySelector(
+        const meta = document.createElement('meta');
+        if (metaTag.property) {
+          meta.setAttribute('property', metaTag.property);
+        } else if (metaTag.name) {
+          meta.setAttribute('name', metaTag.name);
+        }
+        meta.setAttribute('content', metaTag.content);
+
+        // Remove existing meta tags with the same property or name
+        const existingMetaTags = document.querySelectorAll(
           `[property="${metaTag.property}"], [name="${metaTag.name}"]`
         );
+        existingMetaTags.forEach((tag) => tag.remove());
 
-        if (existingMetaTag) {
-          // Если элемент существует, обновить его содержимое
-          existingMetaTag.setAttribute('content', metaTag.content);
-        } else {
-          // Если элемент не существует, создать новый
-          const newMetaTag = document.createElement('meta');
-          if (metaTag.property) {
-            newMetaTag.setAttribute('property', metaTag.property);
-          } else if (metaTag.name) {
-            newMetaTag.setAttribute('name', metaTag.name);
-          }
-          newMetaTag.setAttribute('content', metaTag.content);
-          document.head.appendChild(newMetaTag);
-        }
+        // Add the new meta tag
+        document.head.appendChild(meta);
       });
     },
   },
