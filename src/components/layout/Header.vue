@@ -24,8 +24,8 @@ export default {
         this.showMenu = false;
       }
     },
-    navigateToPortfolio() {
-      window.open('https://zorin.expert', '_blank');
+    about() {
+      this.$router.push('/about');
     },
   },
   mounted() {
@@ -43,7 +43,7 @@ export default {
       <div class="burger-menu" @click="showMenu = !showMenu">
         <i :class="['fa', showMenu ? 'fa-times' : 'fa-bars', 'burger-menu-icon']"></i>
       </div>
-      <div class="logo" @click="navigateToPortfolio">
+      <div class="logo" @click="about">
         <Header3DLogo2 class="img"></Header3DLogo2>
 <!--        <img :src="getHeaderLogoImage" alt="Header Logo Image">-->
       </div>

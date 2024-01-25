@@ -11,8 +11,8 @@ export default {
     };
   },
   methods: {
-    about() {
-      this.$router.push('/about');
+    navigateToPortfolio() {
+      window.open('https://zorin.expert', '_blank');
     },
   },
 };
@@ -20,7 +20,7 @@ export default {
 
 <template>
   <footer>
-    <div class="footer-logo" @click="about">
+    <div class="footer-logo" @click="navigateToPortfolio">
       <img :src="getFooterLogoImage" alt="Footer Logo Image">
     </div>
     <p class="footer-text">{{ $t('footer.text1') }}
