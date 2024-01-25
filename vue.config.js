@@ -39,23 +39,10 @@ module.exports = {
         ]
       }),
       new HtmlWebpackTagsPlugin({
-        // links: [
-        //   {
-            // path: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
-            // attributes: {
-            //   rel: 'stylesheet'
-            // },
-        //   },
-        // ],
-        // scripts: [
-          // 'https://www.googletagmanager.com/gtag/js?id=G-RVMP917YXN',
-          // '/assets/analytics/ganal.js-server'
-        // ],
         append: true,
         publicPath: false,
         useHash: false,
         metas: [
-          // {attributes: {name: 'google-site-verification', content: 'Gq7vrXtN91P1JtoGFo-xrlLMT0PR8u-4P4xs21oRr8Y'}},
           {attributes: {name: 'description', content: 'Rotating 3D cube №2'}},
           {attributes: {property: 'og:title', content: '3D cube №2'}},
           {attributes: {property: 'twitter:title', content: '3D cube №2'}},
