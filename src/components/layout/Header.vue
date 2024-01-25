@@ -89,9 +89,8 @@ header {
     .logo {
       grid-area: logo;
       align-items: center;
-      //margin-top: 0.3rem;
       align-self: center;
-      justify-self: left;
+      justify-content: center;
       display: flex;
       .img {
         width: 4rem;
