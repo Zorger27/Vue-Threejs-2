@@ -52,22 +52,22 @@ footer {
       radial-gradient(at 50% 50%, hsla(355,100%, 93%, 1) 0px, transparent 50%),
       radial-gradient(at 79% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%),
       radial-gradient(at 0% 0%, hsla(343,100%, 76%, 1) 0px, transparent 50%);
-  img {
-    max-width: 100%;
-    width: 4rem;
-    height: 4rem;
-    max-height:100%;
-    cursor: pointer;
-    padding-right: 0.2rem;
-    margin: auto 0.2rem auto 0;
-  }
   p {
     margin: 0;
     padding: 0;
   }
   .footer-logo {
-    margin: 0.3rem;
+    margin: 0 0.3rem;
     display: flex;
+    img {
+      max-width: 100%;
+      width: 4rem;
+      height: 4rem;
+      max-height:100%;
+      cursor: pointer;
+      //padding-right: 0.2rem;
+      //margin: auto 0.2rem auto 0;
+    }
   }
   .footer-text {
     font-size: 1.5rem;
