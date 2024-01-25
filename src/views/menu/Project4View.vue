@@ -124,6 +124,7 @@ export default {
   h1 {font-size: 2.5rem;margin: 0.7rem auto;color: black;}
   .scene-container {
     max-height: 70vh;
+    max-width: 100%;
     position: relative;
     overflow: hidden;
     display: flex;
