@@ -66,7 +66,7 @@ footer {
       max-height:100%;
       cursor: pointer;
       //padding-right: 0.2rem;
-      //margin: auto 0.2rem auto 0;
+      margin: auto 0.2rem auto 0;
     }
   }
   .footer-text {

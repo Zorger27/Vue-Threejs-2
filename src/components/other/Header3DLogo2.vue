@@ -10,19 +10,20 @@ export default {
     const canvasContainer = ref(null);
     let scene, camera, renderer, controls;
 
-    const updateCameraPosition = () => {
-      // Изменение значения в зависимости от ширины экрана
-      if (window.innerWidth <= 768) {
-        camera.position.set(0, 0, 28);
-      } else {
-        camera.position.set(0, 0, 36);
-      }
-    };
+    // const updateCameraPosition = () => {
+    //   // Изменение значения в зависимости от ширины экрана
+    //   if (window.innerWidth <= 768) {
+    //     camera.position.set(0, 0, 28);
+    //   } else {
+    //     camera.position.set(0, 0, 36);
+    //   }
+    // };
 
     const init = () => {
       scene = new THREE.Scene();
       camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      updateCameraPosition();
+      camera.position.set(0, 0, 36);
+      // updateCameraPosition();
 
       renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -112,8 +113,8 @@ export default {
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-      // Добавляем обновление позиции камеры
-      updateCameraPosition();
+      // // Добавляем обновление позиции камеры
+      // updateCameraPosition();
     };
 
     window.addEventListener('resize', onWindowResize);
