@@ -57,7 +57,7 @@ footer {
     padding: 0;
   }
   .footer-logo {
-    margin: 0 0.3rem;
+    margin: 0.3rem;
     display: flex;
     img {
       max-width: 100%;
