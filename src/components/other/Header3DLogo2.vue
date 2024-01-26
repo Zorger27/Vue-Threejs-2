@@ -25,8 +25,13 @@ export default {
       camera.position.set(0, 0, 40);
       // updateCameraPosition();
 
+      // Создание экземпляра THREE.WebGLRenderer
       renderer = new THREE.WebGLRenderer({ alpha: true });
+
+      // Установка размеров для canvas
       renderer.setSize(window.innerWidth, window.innerHeight);
+
+      // Добавление canvas на страницу
       canvasContainer.value.appendChild(renderer.domElement);
 
       controls = new OrbitControls(camera, renderer.domElement);
