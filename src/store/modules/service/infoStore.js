@@ -16,13 +16,13 @@ const state = {
       {
         id: 3,
         title: "Vue.js",
-        version: "3.3.10",
+        version: "3.4.21",
         url: "https://v3.ru.vuejs.org"
       },
       {
         id: 4,
         title: "Vue Router",
-        version: "4.2.5",
+        version: "4.3.0",
         url: "https://router.vuejs.org"
       },
       {
