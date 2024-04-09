@@ -36,8 +36,8 @@
   "about": {
     "title": "Cubo 3D giratorio №2",
     "more01": "Más información...",
-    "more02": "Este proyecto brinda al usuario la oportunidad de interactuar interactivamente con un modelo 3D. En este caso con un cubo. El modelo se puede acercar o alejar, dejar de girar, desplazar en su dirección, etc.",
-    "more03": "Todo esto fue posible gracias al uso de la tecnología Three.js y los controles Three.js Orbit.",
+    "more02": "Este proyecto es una continuación del proyecto \"Cubo 3D giratorio №1\". Se agregaron diferentes modelos de cubos. Se mueven en diferentes direcciones, estando en diferentes órbitas.",
+    "more03": "Para colorear los cubos se utilizaron tanto colores puros como texturas ya preparadas. Algunas caras del cubo tienen una imagen.",
     "more04": "¡Hay MUCHAS cosas interesantes aquí! \uD83D\uDE09\uD83E\uDD13",
     "more05": "¡Bienvenido! \uD83E\uDD29\uD83D\uDE0E",
     "technologies": "Tecnologías",

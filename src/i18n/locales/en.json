@@ -36,8 +36,8 @@
   "about": {
     "title": "Rotating 3D cube №2",
     "more01": "More information...",
-    "more02": "This project provides the user with the opportunity to interact interactively with a 3D model. In this case with a cube. The model can be zoomed in/out, stopped rotating, scrolled in your direction, etc.",
-    "more03": "All this became possible thanks to the use of Three.js technology and Three.js Orbit controls.",
+    "more02": "This project is a continuation of the \"Rotating 3D cube №1\" project. Added different cube models. They move in different directions, being in different orbits.",
+    "more03": "Both pure colors and ready-made textures were used for coloring the cubes. Some sides of the cube have an image on them.",
     "more04": "There are a LOT of interesting things here! \uD83D\uDE09\uD83E\uDD13",
     "more05": "Welcome! \uD83E\uDD29\uD83D\uDE0E",
     "technologies": "Technologies",
