@@ -57,6 +57,7 @@ module.exports = {
           {attributes: {property: 'twitter:image', content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/image_all.jpg'}},
           {attributes: {property: 'og:url', content: 'https://vue-threejs-2.vercel.app'}},
           {attributes: {property: 'og:type', content: 'website'}},
+          {attributes: {property: 'og:site_name', content: 'https://vue-threejs-2.vercel.app'}},
           {attributes: {property: 'twitter:card', content: 'summary_large_image'}}
         ]
       }),

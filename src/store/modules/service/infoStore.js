@@ -4,7 +4,7 @@ const state = {
       {
         id: 1,
         title: "Three.js",
-        version: "162",
+        version: "169",
         url: "https://github.com/mrdoob/three.js/releases"
       },
       {
