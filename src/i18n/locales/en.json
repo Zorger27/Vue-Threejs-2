@@ -5,10 +5,10 @@
     "es": "Spanish"
   },
   "header": {
-    "prg01": "Cube Newest",
-    "prg02": "Cube v.3.0",
-    "prg03": "Cube v.2.0",
-    "prg04": "Cube Old",
+    "prg01": "Composition",
+    "prg02": "Mix",
+    "prg03": "Textures",
+    "prg04": "Colors",
     "about": "About"
   },
   "footer": {
@@ -18,19 +18,19 @@
     "text4": "All rights reserved"
   },
   "project1": {
-    "name": "Cube Newest",
+    "name": "Composition",
     "disc": "Description"
   },
   "project2": {
-    "name": "Cube v.3.0",
+    "name": "Mix",
     "disc": "Description"
   },
   "project3": {
-    "name": "Cube v.2.0",
+    "name": "Textures",
     "disc": "Description"
   },
   "project4": {
-    "name": "Cube Old",
+    "name": "Colors",
     "disc": "Description"
   },
   "about": {

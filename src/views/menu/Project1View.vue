@@ -11,8 +11,8 @@ export default {
   components: {CanvasFullScreen, ToggleFullScreen},
   mixins: [openGraphMixin],
   mounted() {
-    const mainTitle = '3D cube Newest';
-    const title = '3D cube Newest';
+    const mainTitle = 'Composition';
+    const title = 'Composition';
     const metaDescription = 'Rotating 3D Cube';
     const description = 'Rotating 3D cube Newest';
     const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project1.jpg';

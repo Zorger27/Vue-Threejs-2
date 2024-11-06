@@ -5,10 +5,10 @@
     "es": "Español"
   },
   "header": {
-    "prg01": "Cubo más nuevo",
-    "prg02": "Cubo v.3.0",
-    "prg03": "Cubo v.2.0",
-    "prg04": "Cubo viejo",
+    "prg01": "Composición",
+    "prg02": "Mezcla",
+    "prg03": "Texturas",
+    "prg04": "Colores",
     "about": "Sobre"
   },
   "footer": {
@@ -18,19 +18,19 @@
     "text4": "Todos los derechos reservados"
   },
   "project1": {
-    "name": "Cubo más nuevo",
+    "name": "Composición",
     "disc": "Descripción"
   },
   "project2": {
-    "name": "Cubo v.3.0",
+    "name": "Mezcla",
     "disc": "Descripción"
   },
   "project3": {
-    "name": "Cubo v.2.0",
+    "name": "Texturas",
     "disc": "Descripción"
   },
   "project4": {
-    "name": "Cubo viejo",
+    "name": "Colores",
     "disc": "Descripción"
   },
   "about": {
