@@ -23,7 +23,7 @@ const routes = [
     component: Project3,
   },
   {
-    path: '/cube-old',
+    path: '/cube1',
     name: 'project4',
     component: Project4,
   },
