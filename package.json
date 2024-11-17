@@ -1,6 +1,6 @@
 {
   "name": "vue-threejs-2",
-  "description": "Rotating 3D cube N2",
+  "description": "CuboVerse",
   "version": "0.1.0",
   "private": true,
   "scripts": {

@@ -13,8 +13,8 @@ export default {
   mounted() {
     const mainTitle = 'Composition';
     const title = 'Composition';
-    const metaDescription = 'Rotating 3D Cube';
-    const description = 'Rotating 3D cube Newest';
+    const metaDescription = 'CuboVerse';
+    const description = 'CuboVerse';
     const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project1.jpg';
     const url = 'https://vue-threejs-2.vercel.app';
 

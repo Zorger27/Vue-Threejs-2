@@ -6,9 +6,9 @@ export default {
   mixins: [openGraphMixin],
   mounted() {
     const mainTitle = 'Page NOT Found';
-    const title = '3D cube №2 - Page NOT Found';
-    const metaDescription = 'Rotating 3D cube №2';
-    const description = '3D cube №2 - Page NOT Found';
+    const title = 'CuboVerse - Page NOT Found';
+    const metaDescription = 'CuboVerse';
+    const description = 'CuboVerse - Page NOT Found';
     const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/image_404.jpg';
     const url = 'https://vue-threejs-2.vercel.app';
 

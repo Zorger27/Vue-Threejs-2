@@ -34,10 +34,10 @@
     "disc": "Description"
   },
   "about": {
-    "title": "Rotating 3D cube №2",
+    "title": "CuboVerse",
     "more01": "More information...",
-    "more02": "This project is a continuation of the \"Rotating 3D cube №1\" project. Added different cube models. They move in different directions, being in different orbits.",
-    "more03": "Both pure colors and ready-made textures were used for coloring the cubes. Some sides of the cube have an image on them.",
+    "more02": "CuboVerse is an interactive 3D platform that allows users to observe and control unique cube models.",
+    "more03": "Explore a variety of textures, colors, and cube movements in real-time. Scale, rotate, and change the direction of cubes while observing their orbital rotation.",
     "more04": "There are a LOT of interesting things here! \uD83D\uDE09\uD83E\uDD13",
     "more05": "Welcome! \uD83E\uDD29\uD83D\uDE0E",
     "technologies": "Technologies",

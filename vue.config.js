@@ -9,7 +9,7 @@ module.exports = {
       entry: 'src/main.js',
       template: 'public/index.html',
       filename: 'index.html',
-      title: '3D cube №2',
+      title: 'CuboVerse',
     }
   },
   pwa: {
@@ -48,11 +48,11 @@ module.exports = {
         useHash: false,
         metas: [
           {attributes: {name: 'google-site-verification', content: 'Gq9vrXtN91P1JteGFo-xrlLKT0PR8u-4P4xs21oUr8Y'}},
-          {attributes: {name: 'description', content: 'Rotating 3D cube №2'}},
-          {attributes: {property: 'og:title', content: '3D cube №2'}},
-          {attributes: {property: 'twitter:title', content: '3D cube №2'}},
-          {attributes: {property: 'og:description', content: 'Rotating 3D cube №2'}},
-          {attributes: {property: 'twitter:description', content: 'Rotating 3D cube №2'}},
+          {attributes: {name: 'description', content: 'CuboVerse'}},
+          {attributes: {property: 'og:title', content: 'CuboVerse'}},
+          {attributes: {property: 'twitter:title', content: 'CuboVerse'}},
+          {attributes: {property: 'og:description', content: 'CuboVerse'}},
+          {attributes: {property: 'twitter:description', content: 'CuboVerse'}},
           {attributes: {property: 'og:image', content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/image_all.jpg'}},
           {attributes: {property: 'twitter:image', content: 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/image_all.jpg'}},
           {attributes: {property: 'og:url', content: 'https://vue-threejs-2.vercel.app'}},
@@ -69,8 +69,8 @@ module.exports = {
         prefix: 'assets/favicon/', // Этот префикс для файла index.html, чтобы правильно прописать пути иконок с сервера!
         manifest: './src/assets/manifest/manifest.webmanifest',
         favicons: {
-          appName: '3D cube №2',
-          appDescription: 'Rotating 3D cube №2',
+          appName: 'CuboVerse',
+          appDescription: 'CuboVerse',
           developerName: 'Zorger',
           developerURL: null
         }
@@ -81,7 +81,7 @@ module.exports = {
           { path: '/', priority: 1, changefreq: 'always' },
           { path: '/cube3', priority: 1, changefreq: 'daily' },
           { path: '/cube2', priority: 1, changefreq: 'daily' },
-          { path: '/cube-old', priority: 1, changefreq: 'daily' },
+          { path: '/cube1', priority: 1, changefreq: 'daily' },
           { path: '/about', priority: 1, changefreq: 'always' },
         ],
         options: {

@@ -17,10 +17,10 @@ export default {
     };
   },
   mounted() {
-    const mainTitle = 'About this Project';
-    const title = 'About this Project';
-    const metaDescription = 'Rotating 3D Cube';
-    const description = 'About this Project (3D cubes)';
+    const mainTitle = 'About CuboVerse';
+    const title = 'About CuboVerse';
+    const metaDescription = 'CuboVerse';
+    const description = 'About CuboVerse';
     const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/about.jpg';
     const url = 'https://vue-threejs-2.vercel.app/about';
 
