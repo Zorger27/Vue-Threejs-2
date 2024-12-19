@@ -7,11 +7,11 @@
 #### 🔄 The system provides the ability to explore different textures, colors, and movements of cubes in real-time, scale and rotate objects, as well as change their directions on orbits. 🎨 ####
 
 🛠️ <ins>Technologies:</ins><br>
-✅ Three.js + Orbit Controls for advanced 3D graphics 🌐<br>
-✅ Vue.js + VueX for state management and responsive interface 🌍<br>
+✅ Three.js + Orbit Controls for advanced 3D graphics.<br>
+✅ Vue.js + VueX for state management and responsive interface.<br>
 ✅ Vue i18n — multi-language support for a global audience.<br>
-✅ JavaScript for dynamic interaction 💻<br>
-✅ Google Search Console & Analytics for performance optimization, SEO and analytics 📈<br>
+✅ JavaScript for dynamic interaction.<br>
+✅ Google Search Console & Analytics for performance optimization, SEO and analytics.<br>
 
 #### 🪐 *CuboVerse is focused on showcasing the capabilities of three-dimensional graphics and animation, providing users with a simple and engaging experience of interacting with 3D objects.* 🌟 ####
 
