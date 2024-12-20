@@ -11,7 +11,8 @@
 ✅ Vue.js + VueX for state management and responsive interface.<br>
 ✅ Vue i18n — multi-language support for a global audience.<br>
 ✅ JavaScript for dynamic interaction.<br>
-✅ Google Search Console & Analytics for performance optimization, SEO and analytics.<br>
+✅ Google Search Console & Analytics for performance optimization and analytics.<br>
+✅ Open Graph Protocol, Favicon, Sitemap, Robots.txt — for SEO optimization and social media integration.
 
 #### 🪐 *CuboVerse is focused on showcasing the capabilities of three-dimensional graphics and animation, providing users with a simple and engaging experience of interacting with 3D objects.* 🌟 ####
 
