@@ -13,17 +13,17 @@ const routes = [
     component: Project1,
   },
   {
-    path: '/cube3',
+    path: '/cube2',
     name: 'project2',
     component: Project2,
   },
   {
-    path: '/cube2',
+    path: '/cube3',
     name: 'project3',
     component: Project3,
   },
   {
-    path: '/cube1',
+    path: '/cube4',
     name: 'project4',
     component: Project4,
   },

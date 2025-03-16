@@ -79,9 +79,9 @@ module.exports = {
         base: 'https://vue-threejs-2.vercel.app', // Базовый URL моего сайта
         paths: [
           { path: '/', priority: 1, changefreq: 'always' },
-          { path: '/cube3', priority: 1, changefreq: 'daily' },
           { path: '/cube2', priority: 1, changefreq: 'daily' },
-          { path: '/cube1', priority: 1, changefreq: 'daily' },
+          { path: '/cube3', priority: 1, changefreq: 'daily' },
+          { path: '/cube4', priority: 1, changefreq: 'daily' },
           { path: '/about', priority: 1, changefreq: 'always' },
         ],
         options: {

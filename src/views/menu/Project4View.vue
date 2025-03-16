@@ -16,7 +16,7 @@ export default {
     const metaDescription = 'CuboVerse';
     const description = 'CuboVerse';
     const imageUrl = 'https://vue-threejs-2.vercel.app/assets/ogimage/bmp/project4.jpg';
-    const url = 'https://vue-threejs-2.vercel.app/cube-old';
+    const url = 'https://vue-threejs-2.vercel.app/cube4';
 
     this.setOpenGraphTags(metaDescription, title, description, imageUrl, url);
     this.setPageTitle(mainTitle);
