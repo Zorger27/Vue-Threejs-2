@@ -78,11 +78,11 @@ module.exports = {
       new SitemapPlugin({
         base: 'https://vue-threejs-2.vercel.app', // Базовый URL моего сайта
         paths: [
-          { path: '/', priority: 1, changefreq: 'always' },
-          { path: '/cube2', priority: 1, changefreq: 'daily' },
-          { path: '/cube3', priority: 1, changefreq: 'daily' },
-          { path: '/cube4', priority: 1, changefreq: 'daily' },
-          { path: '/about', priority: 1, changefreq: 'always' },
+          { path: '/', priority: 1.0, changefreq: 'daily' },
+          { path: '/cube2', priority: 0.8, changefreq: 'weekly' },
+          { path: '/cube3', priority: 0.8, changefreq: 'weekly' },
+          { path: '/cube4', priority: 0.8, changefreq: 'weekly' },
+          { path: '/about', priority: 0.6, changefreq: 'monthly' },
         ],
         options: {
           skipgzip: true
