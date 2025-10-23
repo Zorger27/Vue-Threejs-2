@@ -15,6 +15,16 @@ export const openGraphMixin = {
       }
     },
 
+    setCanonical(url) {
+      const existingCanonical = document.querySelector('link[rel="canonical"]');
+      if (existingCanonical) existingCanonical.remove();
+
+      const link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      link.setAttribute('href', url);
+      document.head.appendChild(link);
+    },
+
     setOpenGraphTags(metaDescription, title, description, imageUrl, url) {
       const metaTags = [
         { name: 'description', content: metaDescription },
