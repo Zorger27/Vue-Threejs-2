@@ -58,7 +58,9 @@ module.exports = {
           {attributes: {property: 'og:url', content: 'https://vue-threejs-2.vercel.app'}},
           {attributes: {property: 'og:type', content: 'website'}},
           {attributes: {property: 'og:site_name', content: 'https://vue-threejs-2.vercel.app'}},
-          {attributes: {property: 'twitter:card', content: 'summary_large_image'}}
+          {attributes: {property: 'twitter:card', content: 'summary_large_image'}},
+          {attributes: {name: 'author', content: 'Anatolii Zorin'}},
+          {attributes: {name: 'robots', content: 'index,follow'}}
         ]
       }),
       new FaviconsWebpackPlugin({
